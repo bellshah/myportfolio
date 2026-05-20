@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: nabilah-portfolio
-    env: static
-    staticPublishPath: .
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /portfolio_slides.html
