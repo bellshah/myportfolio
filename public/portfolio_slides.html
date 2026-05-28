@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nabilah Binti Mohammad Shahidan — Portfolio 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+/* ─── RESET ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+
+/* ─── TOKENS ─── */
+:root{
+  --navy:#22345C;--navy2:#1a2947;--navy3:#2d4170;
+  --coral:#C8472E;--coral2:#A83B25;
+  --paper:#F5F0E8;--paper2:#EDE8DF;
+  --gold:#C9A84C;--teal:#2A9D8F;
+  --white:#FFFFFF;--dim:#8A8F9E;
+}
+
+/* ─── SCROLL CONTAINER ─── */
+body{font-family:'Inter',sans-serif;overflow:hidden;background:var(--navy)}
+#scroller{height:100vh;overflow-y:scroll;scroll-snap-type:y mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
+.page{height:100vh;scroll-snap-align:start;scroll-snap-stop:always;position:relative;overflow:hidden;display:flex;flex-direction:column}
+
+/* ─── TOP NAV ─── */
+#top-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(26,41,71,0.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:space-between;padding:0 32px}
+.nav-logo{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:.02em}
+.nav-logo span{color:var(--coral)}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);text-decoration:none;padding:5px 10px;border-radius:4px;transition:all .2s;cursor:pointer}
+.nav-links a:hover,.nav-links a.active{color:var(--white);background:rgba(255,255,255,.1)}
+
+/* ─── SIDE DOTS ─── */
+#side-dots{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:10px}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25);cursor:pointer;transition:all .25s;border:1.5px solid rgba(255,255,255,.4)}
+.dot.active{background:var(--coral);border-color:var(--coral);transform:scale(1.45)}
+
+/* ─── SHARED PAGE CHROME ─── */
+.page-inner{flex:1;width:100%;margin:0 auto;display:flex;flex-direction:column}
+.page-heading{margin-bottom:24px}
+.page-heading .tag{font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--coral);display:block;margin-bottom:4px}
+.page-heading h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.2vw,42px);font-weight:900;color:var(--navy);line-height:1.1}
+.page-heading.light h2{color:var(--white)}
+.page-heading .rule{width:36px;height:3px;background:var(--coral);margin-top:8px;border-radius:2px}
+
+/* ════════════════════════════
+   PAGE 1 — INTRODUCTION
+════════════════════════════ */
+#p1{background:var(--navy);padding-top:52px}
+.p1-inner{flex:1;display:grid;grid-template-columns:1fr 360px;gap:0;max-width:1180px;padding:44px 44px 28px;align-items:center;margin:0 auto;width:100%}
+.p1-left{padding-right:44px}
+.p1-eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:16px}
+.p1-eyebrow-line{width:28px;height:1.5px;background:var(--coral)}
+.p1-eyebrow-text{color:var(--coral);font-size:10px;font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:.14em}
+.p1-name{font-family:'Playfair Display',serif;font-size:clamp(34px,4.6vw,60px);font-weight:900;color:var(--white);line-height:1.07;margin-bottom:8px}
+.p1-name .italic{font-style:italic;font-weight:400;color:rgba(255,255,255,.65)}
+.p1-role{font-family:'Space Mono',monospace;font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.14em;margin-bottom:20px}
+.p1-bio{font-size:13.5px;line-height:1.78;color:rgba(255,255,255,.62);max-width:500px;margin-bottom:24px}
+.p1-certs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px}
+.cert-badge{display:flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);font-size:11px;color:rgba(255,255,255,.78);font-weight:500}
+.cert-badge .dot-c{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.otw{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:24px;background:rgba(42,157,143,.14);border:1px solid rgba(42,157,143,.38)}
+.otw-pulse{width:8px;height:8px;border-radius:50%;background:#2A9D8F;flex-shrink:0;position:relative}
+.otw-pulse::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1.5px solid #2A9D8F;animation:pr 1.7s ease-out infinite}
+@keyframes pr{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(2.3)}}
+.otw-text{font-size:12px;color:#2A9D8F;font-weight:600;letter-spacing:.04em}
+.otw-sub{font-size:10px;color:rgba(42,157,143,.65);font-family:'Space Mono',monospace}
+
+/* info card */
+.p1-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px;backdrop-filter:blur(8px)}
+.p1-card-hdr{font-family:'Space Mono',monospace;font-size:9px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.08)}
+.p1-fact{display:flex;align-items:flex-start;gap:10px;margin-bottom:13px}
+.p1-fact:last-child{margin-bottom:0}
+.p1-fact-icon{font-size:13px;flex-shrink:0;margin-top:1px}
+.p1-fact-lbl{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--dim)}
+.p1-fact-val{font-size:12px;color:rgba(255,255,255,.82);margin-top:2px;font-weight:500}
+
+/* ════════════════════════════
+   PAGE 2 — EDUCATION
+════════════════════════════ */
+#p2{background:var(--paper);padding-top:52px}
+.p2-inner{flex:1;max-width:1100px;margin:0 auto;width:100%;padding:40px 44px 28px;display:flex;flex-direction:column}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;flex:1}
+.edu-card{background:var(--white);border-radius:14px;padding:20px;border:1px solid rgba(34,52,92,.08);box-shadow:0 2px 10px rgba(34,52,92,.05);display:flex;flex-direction:column;gap:11px}
+.edu-tag{display:inline-block;font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.12em;padding:3px 10px;border-radius:10px;background:var(--coral);color:var(--white);width:fit-content}
+.edu-tag.teal{background:var(--teal)}
+.edu-tag.gold{background:var(--gold)}
+.edu-degree{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--navy);line-height:1.3}
+.edu-field{font-size:11px;color:var(--coral);font-weight:600;margin-top:2px}
+.edu-field.teal{color:var(--teal)}
+.edu-inst{font-size:10.5px;color:var(--dim)}
+.edu-meta{display:flex;gap:14px;align-items:center}
+.edu-cgpa{font-family:'Playfair Display',serif;font-size:30px;font-weight:900;color:var(--navy);line-height:1}
+.edu-cgpa-lbl{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;color:var(--dim);margin-top:2px}
+.edu-period{font-family:'Space Mono',monospace;font-size:9.5px;color:var(--dim);line-height:1.6}
+.edu-honours{display:flex;flex-wrap:wrap;gap:5px}
+.honour-chip{font-size:10px;padding:3px 9px;border-radius:8px;background:rgba(201,168,76,.12);color:var(--gold);border:1px solid rgba(201,168,76,.28);font-weight:500}
+.cert-list{display:flex;flex-direction:column;gap:7px}
+.cert-item{display:flex;align-items:flex-start;gap:8px;padding:7px 9px;border-radius:8px;background:var(--paper)}
+.cert-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.cert-name{font-size:11px;font-weight:600;color:var(--navy)}
+.cert-issuer{font-family:'Space Mono',monospace;font-size:9px;color:var(--dim);margin-top:1px}
+
+/* ════════════════════════════
+   PAGE 3 — WORK EXPERIENCE
+════════════════════════════ */
+#p3{background:var(--navy2);padding-top:52px}
+.p3-inner{flex:1;max-width:1150px;margin:0 auto;width:100%;padding:40px 44px 28px;display:flex;flex-direction:column}
+.p3-body{display:grid;grid-template-columns:250px 1fr;gap:24px;flex:1}
+.p3-sidebar{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.p3-company{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--white);line-height:1.35}
+.p3-role-tag{display:inline-block;padding:3px 10px;border-radius:8px;background:var(--coral);font-size:9px;font-family:'Space Mono',monospace;color:var(--white);text-transform:uppercase;letter-spacing:.08em;width:fit-content}
+.p3-divider{height:1px;background:rgba(255,255,255,.08)}
+.p3-meta-lbl{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--dim)}
+.p3-meta-val{font-size:11.5px;color:rgba(255,255,255,.78);font-weight:500;margin-top:2px}
+.p3-meta-row{display:flex;flex-direction:column;gap:10px}
+.p3-bullet{display:flex;gap:7px;font-size:10.5px;color:rgba(255,255,255,.6);line-height:1.55}
+.p3-bullet-dot{width:4px;height:4px;border-radius:50%;background:var(--coral);flex-shrink:0;margin-top:5px}
+.p3-main{display:flex;flex-direction:column;gap:14px}
+.p3-projects{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.p3-proj{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:16px}
+.p3-proj-title{font-family:'Playfair Display',serif;font-size:13.5px;font-weight:700;color:var(--white);margin-bottom:5px}
+.p3-proj-desc{font-size:10.5px;color:rgba(255,255,255,.57);line-height:1.65;margin-bottom:10px}
+.p3-proj-tech{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+.tech-pill{font-family:'Space Mono',monospace;font-size:8.5px;padding:2px 7px;border-radius:5px;background:rgba(200,71,46,.14);color:rgba(220,100,70,.95);border:1px solid rgba(200,71,46,.28)}
+.p3-proj-link{display:inline-flex;align-items:center;gap:5px;font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--teal);text-decoration:none;border:1px solid rgba(42,157,143,.38);padding:4px 10px;border-radius:6px;transition:all .2s}
+.p3-proj-link:hover{background:rgba(42,157,143,.14)}
+.p3-resp{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.resp-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:13px 11px;text-align:center;position:relative}
+.resp-n{font-family:'Space Mono',monospace;font-size:8.5px;color:var(--coral);text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px}
+.resp-icon{font-size:18px;margin-bottom:5px}
+.resp-title{font-size:11.5px;font-weight:600;color:var(--white);margin-bottom:3px}
+.resp-desc{font-size:9.5px;color:rgba(255,255,255,.48);line-height:1.5}
+.resp-arrow{position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:var(--coral);font-size:16px;font-weight:700;z-index:2;pointer-events:none}
+
+/* ════════════════════════════
+   PAGE 4 — SKILLS
+════════════════════════════ */
+#p4{background:var(--paper);padding-top:52px}
+.p4-inner{flex:1;max-width:1100px;margin:0 auto;width:100%;padding:38px 44px 24px;display:flex;flex-direction:column}
+.p4-body{display:grid;grid-template-columns:1fr 1fr;gap:24px;flex:1}
+.skills-col{display:flex;flex-direction:column;gap:13px;overflow-y:auto;padding-right:4px}
+.skill-group-lbl{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.skill-group-lbl::after{content:'';flex:1;height:1px;background:rgba(34,52,92,.1)}
+.skill-pills{display:flex;flex-wrap:wrap;gap:5px}
+.skill-pill{font-size:11px;padding:4px 10px;border-radius:6px;background:var(--white);color:var(--navy);border:1px solid rgba(34,52,92,.11);font-weight:500;box-shadow:0 1px 3px rgba(34,52,92,.05)}
+.academic-box{background:var(--navy);border-radius:12px;padding:18px;color:var(--white);margin-top:4px}
+.academic-box h3{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--white);margin-bottom:12px}
+.academic-item{display:flex;gap:7px;font-size:10.5px;color:rgba(255,255,255,.68);line-height:1.45;margin-bottom:6px}
+.academic-item::before{content:'›';color:var(--coral);font-size:13px;flex-shrink:0;font-weight:700}
+
+/* ════════════════════════════
+   PAGE 5 — OTHER INVOLVEMENT
+════════════════════════════ */
+#p5{background:var(--white);padding-top:52px}
+.p5-inner{flex:1;max-width:1150px;margin:0 auto;width:100%;padding:38px 44px 24px;display:flex;flex-direction:column;gap:16px}
+.deans-banner{background:linear-gradient(135deg,var(--navy) 0%,var(--navy3) 100%);border-radius:14px;padding:16px 22px;display:flex;align-items:center;gap:18px}
+.deans-icon{font-size:34px}
+.deans-text h3{font-family:'Playfair Display',serif;font-size:19px;font-weight:900;color:var(--gold)}
+.deans-text p{font-size:11.5px;color:rgba(255,255,255,.65);margin-top:2px}
+.deans-badges{margin-left:auto;display:flex;gap:7px;flex-shrink:0}
+.deans-badge{padding:4px 12px;border-radius:20px;background:rgba(201,168,76,.14);border:1px solid rgba(201,168,76,.38);font-family:'Space Mono',monospace;font-size:9px;color:var(--gold);text-transform:uppercase;letter-spacing:.08em}
+.p5-cols{display:grid;grid-template-columns:1fr 1fr 270px;gap:20px;flex:1}
+.p5-sec-title{font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:9px}
+.event-list{display:flex;flex-direction:column;gap:7px}
+.event-card{background:var(--paper);border-radius:10px;padding:11px 13px;border-left:3px solid var(--coral)}
+.event-card.org{border-left-color:var(--teal)}
+.event-title{font-size:11.5px;font-weight:600;color:var(--navy)}
+.event-meta{font-family:'Space Mono',monospace;font-size:9px;color:var(--dim);margin-top:2px}
+.photo-mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:7px;flex:1}
+.photo-placeholder{border-radius:8px;background:var(--paper2);border:2px dashed rgba(34,52,92,.14);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:9px;color:var(--dim);text-align:center;line-height:1.6;padding:8px;overflow:hidden}
+.photo-placeholder:first-child{grid-column:span 2}
+.photo-placeholder img{width:100%;height:100%;object-fit:cover;border-radius:6px}
+
+/* ════════════════════════════
+   PAGE 6 — CONTACT
+════════════════════════════ */
+#p6{background:var(--navy);padding-top:52px}
+.p6-inner{flex:1;max-width:640px;margin:0 auto;width:100%;padding:0 40px 40px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:36px}
+.p6-heading{font-family:'Playfair Display',serif;font-size:clamp(30px,4.5vw,54px);font-weight:900;color:var(--white);line-height:1.08}
+.p6-heading span{color:var(--coral);font-style:italic}
+.p6-sub{font-size:13.5px;color:rgba(255,255,255,.52);max-width:400px;line-height:1.72}
+.contact-links{display:flex;flex-direction:column;gap:10px;width:100%}
+.contact-link{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);text-decoration:none;transition:all .22s}
+.contact-link:hover{background:rgba(255,255,255,.09);border-color:rgba(200,71,46,.45);transform:translateX(5px)}
+.contact-link:hover .c-arrow{transform:translateX(5px)}
+.cl-left{display:flex;align-items:center;gap:12px}
+.cl-icon{font-size:17px}
+.cl-lbl{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--dim)}
+.cl-val{font-size:12.5px;color:var(--white);font-weight:500;margin-top:1px}
+.c-arrow{font-size:17px;color:var(--coral);transition:transform .22s}
+.p6-footer{font-family:'Space Mono',monospace;font-size:9.5px;color:rgba(255,255,255,.22);text-align:center;line-height:1.8}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  #top-nav .nav-links{display:none}
+  .p1-inner{grid-template-columns:1fr;padding:20px 18px 16px}
+  .p1-card{display:none}
+  .p2-inner,.p3-inner,.p4-inner,.p5-inner,.p6-inner{padding:20px 18px 16px}
+  .edu-grid{grid-template-columns:1fr;overflow-y:auto}
+  .p3-body{grid-template-columns:1fr}
+  .p3-sidebar{display:none}
+  .p3-projects{grid-template-columns:1fr}
+  .p3-resp{grid-template-columns:1fr 1fr}
+  .resp-arrow{display:none}
+  .p4-body{grid-template-columns:1fr}
+  .p5-cols{grid-template-columns:1fr}
+  .photo-mosaic,.deans-badges{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav id="top-nav">
+  <div class="nav-logo">Nabilah <span>·</span> Portfolio 2026</div>
+  <ul class="nav-links">
+    <li><a href="#" onclick="goTo(0);return false" data-i="0">Introduction</a></li>
+    <li><a href="#" onclick="goTo(1);return false" data-i="1">Education</a></li>
+    <li><a href="#" onclick="goTo(2);return false" data-i="2">Experience</a></li>
+    <li><a href="#" onclick="goTo(3);return false" data-i="3">Skills</a></li>
+    <li><a href="#" onclick="goTo(4);return false" data-i="4">Involvement</a></li>
+    <li><a href="#" onclick="goTo(5);return false" data-i="5">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- SIDE DOTS -->
+<div id="side-dots">
+  <div class="dot active" onclick="goTo(0)"></div>
+  <div class="dot" onclick="goTo(1)"></div>
+  <div class="dot" onclick="goTo(2)"></div>
+  <div class="dot" onclick="goTo(3)"></div>
+  <div class="dot" onclick="goTo(4)"></div>
+  <div class="dot" onclick="goTo(5)"></div>
+</div>
+
+<div id="scroller">
+
+<!-- ══════════════════════════════════
+     PAGE 1 — INTRODUCTION
+══════════════════════════════════ -->
+<section class="page" id="p1">
+<div class="p1-inner">
+  <div class="p1-left">
+    <div class="p1-eyebrow">
+      <div class="p1-eyebrow-line"></div>
+      <span class="p1-eyebrow-text">Portfolio 2026 · Software Engineering</span>
+    </div>
+    <h1 class="p1-name">Nabilah<br><span class="italic">binti</span> Mohammad<br>Shahidan</h1>
+    <div class="p1-role">Software Engineering Graduate · UMPSA · Class of 2026</div>
+    <p class="p1-bio">Dual UMPSA qualification — Diploma in Computer Science and Bachelor of Computer Science (Software Engineering) at the same institution. Currently serving as AI &amp; Digitalization Intern at TNB Renewables Sdn. Bhd. where I independently developed and deployed a production web system automating HR operations.</p>
+    <div class="p1-certs">
+      <div class="cert-badge"><div class="dot-c" style="background:#4CAF50"></div>ISC2 Certified in Cybersecurity</div>
+      <div class="cert-badge"><div class="dot-c" style="background:#F59E0B"></div>Anthropic Claude API &amp; Agent Skills</div>
+      <div class="cert-badge"><div class="dot-c" style="background:#FF9900"></div>AWS Cloud Practitioner</div>
+      <div class="cert-badge"><div class="dot-c" style="background:#0078D4"></div>Microsoft Security Fundamentals</div>
+      <div class="cert-badge"><div class="dot-c" style="background:#1BA0D7"></div>Cisco Networking Academy</div>
+    </div>
+    <div class="otw">
+      <div class="otw-pulse"></div>
+      <span class="otw-text">Open to Work</span>
+      <span class="otw-sub">Available from August 2026</span>
+    </div>
+  </div>
+  <div class="p1-card">
+    <div class="p1-card-hdr">Quick Facts</div>
+    <div class="p1-fact"><span class="p1-fact-icon">🎓</span><div><div class="p1-fact-lbl">Qualification</div><div class="p1-fact-val">B.Sc. CS — Software Engineering Hons.</div></div></div>
+    <div class="p1-fact"><span class="p1-fact-icon">📊</span><div><div class="p1-fact-lbl">CGPA</div><div class="p1-fact-val">3.31 / 4.00 · Dean's List Semester 5</div></div></div>
+    <div class="p1-fact"><span class="p1-fact-icon">🏢</span><div><div class="p1-fact-lbl">Internship</div><div class="p1-fact-val">AI &amp; Digitalization · TNB Renewables</div></div></div>
+    <div class="p1-fact"><span class="p1-fact-icon">📍</span><div><div class="p1-fact-lbl">Based in</div><div class="p1-fact-val">Klang, Selangor, Malaysia</div></div></div>
+    <div class="p1-fact"><span class="p1-fact-icon">🌐</span><div><div class="p1-fact-lbl">Open to</div><div class="p1-fact-val">Selangor · KL · Pahang · Remote</div></div></div>
+    <div class="p1-fact"><span class="p1-fact-icon">📧</span><div><div class="p1-fact-lbl">Email</div><div class="p1-fact-val">nanabellashah03@gmail.com</div></div></div>
+    <div class="p1-fact"><span class="p1-fact-icon">📱</span><div><div class="p1-fact-lbl">Phone</div><div class="p1-fact-val">+6010-9648871</div></div></div>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════
+     PAGE 2 — EDUCATION
+══════════════════════════════════ -->
+<section class="page" id="p2">
+<div class="p2-inner">
+  <div class="page-heading">
+    <span class="tag">Academic Qualifications</span>
+    <h2>My Education</h2>
+    <div class="rule"></div>
+  </div>
+  <div class="edu-grid">
+
+    <div class="edu-card">
+      <span class="edu-tag">Degree</span>
+      <div>
+        <div class="edu-degree">Bachelor of Computer Science</div>
+        <div class="edu-field">Software Engineering with Honours</div>
+        <div class="edu-inst">Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)</div>
+      </div>
+      <div class="edu-meta">
+        <div><div class="edu-cgpa">3.31</div><div class="edu-cgpa-lbl">CGPA / 4.00</div></div>
+        <div class="edu-period">2023 – 2026<br>109 Credits</div>
+      </div>
+      <div class="edu-honours">
+        <span class="honour-chip">Dean's List Semester 5</span>
+        <span class="honour-chip">Second Class Upper</span>
+        <span class="honour-chip">109 Credits</span>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <span class="edu-tag teal">Diploma</span>
+      <div>
+        <div class="edu-degree">Diploma in Computer Science</div>
+        <div class="edu-field teal">Computer Science</div>
+        <div class="edu-inst">Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)</div>
+      </div>
+      <div class="edu-meta">
+        <div><div class="edu-cgpa">3.26</div><div class="edu-cgpa-lbl">CGPA / 4.00</div></div>
+        <div class="edu-period">Aug 2021 – Aug 2023<br>MUET Band 3.5</div>
+      </div>
+      <div class="edu-honours">
+        <span class="honour-chip">Dean's List Sem 1 (GPA 3.60)</span>
+        <span class="honour-chip">Second Class</span>
+        <span class="honour-chip">MUET 3.5</span>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <span class="edu-tag gold">Certifications</span>
+      <div class="cert-list">
+        <div class="cert-item"><div class="cert-dot" style="background:#4CAF50"></div><div><div class="cert-name">ISC2 Certified in Cybersecurity (CC)</div><div class="cert-issuer">ISC2 · 2025</div></div></div>
+        <div class="cert-item"><div class="cert-dot" style="background:#F59E0B"></div><div><div class="cert-name">Building with the Claude API</div><div class="cert-issuer">Anthropic Education · 2026</div></div></div>
+        <div class="cert-item"><div class="cert-dot" style="background:#F59E0B"></div><div><div class="cert-name">Introduction to Agent Skills</div><div class="cert-issuer">Anthropic Education · 2026</div></div></div>
+        <div class="cert-item"><div class="cert-dot" style="background:#FF9900"></div><div><div class="cert-name">AWS Cloud Practitioner Essentials</div><div class="cert-issuer">Amazon Web Services · 2026</div></div></div>
+        <div class="cert-item"><div class="cert-dot" style="background:#0078D4"></div><div><div class="cert-name">Security, Compliance &amp; Identity Fund.</div><div class="cert-issuer">Microsoft Certified · 2025</div></div></div>
+        <div class="cert-item"><div class="cert-dot" style="background:#1BA0D7"></div><div><div class="cert-name">Cisco Networking Academy</div><div class="cert-issuer">Cisco Systems · 2024</div></div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════
+     PAGE 3 — WORK EXPERIENCE
+══════════════════════════════════ -->
+<section class="page" id="p3">
+<div class="p3-inner">
+  <div class="page-heading light">
+    <span class="tag">Professional Experience</span>
+    <h2>My Work Experience</h2>
+    <div class="rule"></div>
+  </div>
+  <div class="p3-body">
+    <div class="p3-sidebar">
+      <div>
+        <div class="p3-company">TNB Renewables Sdn. Bhd. (TRe)</div>
+        <span class="p3-role-tag">Internship</span>
+      </div>
+      <div class="p3-divider"></div>
+      <div class="p3-meta-row">
+        <div><div class="p3-meta-lbl">Role</div><div class="p3-meta-val">AI &amp; Digitalization Intern</div></div>
+        <div><div class="p3-meta-lbl">Period</div><div class="p3-meta-val">Mar 2026 – Aug 2026</div></div>
+        <div><div class="p3-meta-lbl">Duration</div><div class="p3-meta-val">6 Months</div></div>
+        <div><div class="p3-meta-lbl">Location</div><div class="p3-meta-val">Bangsar, WP Kuala Lumpur</div></div>
+        <div><div class="p3-meta-lbl">Department</div><div class="p3-meta-val">AI &amp; Digitalization</div></div>
+        <div><div class="p3-meta-lbl">Supervisor</div><div class="p3-meta-val">— (update here)</div></div>
+      </div>
+      <div class="p3-divider"></div>
+      <div style="display:flex;flex-direction:column;gap:7px">
+        <div class="p3-bullet"><div class="p3-bullet-dot"></div>Deployed Flask app to production — used by HR daily</div>
+        <div class="p3-bullet"><div class="p3-bullet-dot"></div>Automated 1-month manual paper process</div>
+        <div class="p3-bullet"><div class="p3-bullet-dot"></div>Authored SRS for 3 enterprise systems</div>
+        <div class="p3-bullet"><div class="p3-bullet-dot"></div>4 professional certifications earned during internship</div>
+      </div>
+    </div>
+    <div class="p3-main">
+      <div class="p3-projects">
+        <div class="p3-proj">
+          <div class="p3-proj-title">TNB Trainee Access Card System</div>
+          <div class="p3-proj-desc">Full-stack Flask web app replacing a manual HR process. Features online form submission, automated PDF generation matching the official TNB Lampiran I layout, and automated email delivery to HR.</div>
+          <div class="p3-proj-tech">
+            <span class="tech-pill">Python</span><span class="tech-pill">Flask</span><span class="tech-pill">ReportLab</span><span class="tech-pill">Pillow</span><span class="tech-pill">Bootstrap 5</span><span class="tech-pill">Render.com</span>
+          </div>
+          <a href="#" class="p3-proj-link">🔗 Live App ↗</a>
+        </div>
+        <div class="p3-proj">
+          <div class="p3-proj-title">SRS Documentation Suite</div>
+          <div class="p3-proj-desc">Authored Software Requirements Specifications for Solar Land Database Dashboard, HSE Reporting Dashboard, and Procurement Process Automation System (PPAS) — real enterprise deliverables for TRe.</div>
+          <div class="p3-proj-tech">
+            <span class="tech-pill">SRS</span><span class="tech-pill">SDLC</span><span class="tech-pill">Requirements Analysis</span><span class="tech-pill">Stakeholder Interviews</span>
+          </div>
+          <a href="#" class="p3-proj-link">📄 View Document ↗</a>
+        </div>
+      </div>
+      <div class="p3-resp">
+        <div class="resp-card"><div class="resp-n">01</div><div class="resp-icon">🛠️</div><div class="resp-title">Develop</div><div class="resp-desc">Built &amp; deployed Flask web system used in production by HR</div><span class="resp-arrow">›</span></div>
+        <div class="resp-card"><div class="resp-n">02</div><div class="resp-icon">🧪</div><div class="resp-title">Test</div><div class="resp-desc">Conducted UAT with HR staff and resolved bugs before go-live</div><span class="resp-arrow">›</span></div>
+        <div class="resp-card"><div class="resp-n">03</div><div class="resp-icon">💬</div><div class="resp-title">Gather Feedback</div><div class="resp-desc">Stakeholder interviews &amp; requirements gathering for 3 SRS docs</div><span class="resp-arrow">›</span></div>
+        <div class="resp-card"><div class="resp-n">04</div><div class="resp-icon">🔄</div><div class="resp-title">Improve</div><div class="resp-desc">Iterative refinements based on real user feedback post-deployment</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════
+     PAGE 4 — SKILLS
+══════════════════════════════════ -->
+<section class="page" id="p4">
+<div class="p4-inner">
+  <div class="page-heading">
+    <span class="tag">Technical Competencies</span>
+    <h2>What I Bring to The Table</h2>
+    <div class="rule"></div>
+  </div>
+  <div class="p4-body">
+    <div class="skills-col">
+      <div><div class="skill-group-lbl">Programming</div><div class="skill-pills"><span class="skill-pill">Python</span><span class="skill-pill">Java</span><span class="skill-pill">JavaScript</span><span class="skill-pill">PHP</span><span class="skill-pill">C</span><span class="skill-pill">SQL</span></div></div>
+      <div><div class="skill-group-lbl">Frontend</div><div class="skill-pills"><span class="skill-pill">HTML5</span><span class="skill-pill">CSS3</span><span class="skill-pill">Bootstrap 5</span><span class="skill-pill">React Native</span><span class="skill-pill">WordPress</span></div></div>
+      <div><div class="skill-group-lbl">Backend</div><div class="skill-pills"><span class="skill-pill">Flask</span><span class="skill-pill">Laravel</span><span class="skill-pill">Jinja2</span><span class="skill-pill">smtplib</span><span class="skill-pill">REST APIs</span></div></div>
+      <div><div class="skill-group-lbl">Database</div><div class="skill-pills"><span class="skill-pill">MySQL</span><span class="skill-pill">SQLite</span><span class="skill-pill">phpMyAdmin</span></div></div>
+      <div><div class="skill-group-lbl">QA &amp; Support</div><div class="skill-pills"><span class="skill-pill">UAT Testing</span><span class="skill-pill">SRS Writing</span><span class="skill-pill">Requirements Gathering</span><span class="skill-pill">SDLC</span><span class="skill-pill">Agile</span></div></div>
+    </div>
+    <div class="skills-col">
+      <div><div class="skill-group-lbl">Deployment</div><div class="skill-pills"><span class="skill-pill">AWS</span><span class="skill-pill">Render.com</span><span class="skill-pill">Gunicorn</span><span class="skill-pill">Netlify</span><span class="skill-pill">GitHub</span></div></div>
+      <div><div class="skill-group-lbl">Tools</div><div class="skill-pills"><span class="skill-pill">VS Code</span><span class="skill-pill">Power BI</span><span class="skill-pill">Figma</span><span class="skill-pill">Android Studio</span><span class="skill-pill">Canva</span><span class="skill-pill">Photoshop</span></div></div>
+      <div><div class="skill-group-lbl">OS</div><div class="skill-pills"><span class="skill-pill">Windows</span><span class="skill-pill">Linux (Ubuntu)</span></div></div>
+      <div><div class="skill-group-lbl">Office Tools</div><div class="skill-pills"><span class="skill-pill">Microsoft Word</span><span class="skill-pill">Excel</span><span class="skill-pill">PowerPoint</span><span class="skill-pill">Teams</span></div></div>
+      <div class="academic-box">
+        <h3>Academic Foundation — SE Coursework</h3>
+        <div class="academic-item">Software Requirements Engineering</div>
+        <div class="academic-item">Software Design &amp; Architecture</div>
+        <div class="academic-item">Software Testing &amp; Quality Assurance</div>
+        <div class="academic-item">Database Systems &amp; Administration</div>
+        <div class="academic-item">Web Application Development</div>
+        <div class="academic-item">Network Security Fundamentals</div>
+        <div class="academic-item">Human-Computer Interaction</div>
+        <div class="academic-item">Object-Oriented Programming</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════
+     PAGE 5 — OTHER INVOLVEMENT
+══════════════════════════════════ -->
+<section class="page" id="p5">
+<div class="p5-inner">
+  <div class="page-heading">
+    <span class="tag">Beyond the Classroom</span>
+    <h2>Other Involvement</h2>
+    <div class="rule"></div>
+  </div>
+  <div class="deans-banner">
+    <div class="deans-icon">🏆</div>
+    <div class="deans-text">
+      <h3>Dean's List Award × 2</h3>
+      <p>Diploma Semester 1 (GPA 3.60) &amp; Degree Semester 5 — UMPSA Faculty of Computing</p>
+    </div>
+    <div class="deans-badges">
+      <span class="deans-badge">Diploma Sem 1 · GPA 3.60</span>
+      <span class="deans-badge">Degree Sem 5 · 2025</span>
+    </div>
+  </div>
+  <div class="p5-cols">
+    <div>
+      <div class="p5-sec-title">As Participant</div>
+      <div class="event-list">
+        <div class="event-card"><div class="event-title">IFACS 2025</div><div class="event-meta">International Festival on AI &amp; Cyber Security · Nov 2025</div></div>
+        <div class="event-card"><div class="event-title">Power BI Crash Course</div><div class="event-meta">Data Visualisation &amp; Dashboard Building · May 2025</div></div>
+        <div class="event-card"><div class="event-title">International Carnival — Inclusive Technology</div><div class="event-meta">International Carnival in Inclusive Tech &amp; Ecosystem · May 2025</div></div>
+        <div class="event-card"><div class="event-title">UMPSA Innovation &amp; Technology Showcase</div><div class="event-meta">Faculty of Computing · 2024</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="p5-sec-title">As Organiser — UMPSA PEKA 5</div>
+      <div class="event-list">
+        <div class="event-card org"><div class="event-title">Escape Resident</div><div class="event-meta">UMPSA PEKA 5 · Committee Member</div></div>
+        <div class="event-card org"><div class="event-title">Color Run</div><div class="event-meta">UMPSA PEKA 5 · May 2024</div></div>
+        <div class="event-card org"><div class="event-title">Program Inisiatif Pucuk Hijau UMW</div><div class="event-meta">UMPSA PEKA 5 · November 2023</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="p5-sec-title">Photo Gallery</div>
+      <div class="photo-mosaic" style="height:200px">
+        <!-- Replace <div class="photo-placeholder"> with:
+             <img src="your-photo.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:6px"> -->
+        <div class="photo-placeholder">📸 Add photo<br>(replaces this div)</div>
+        <div class="photo-placeholder">📸 Photo 2</div>
+        <div class="photo-placeholder">📸 Photo 3</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════
+     PAGE 6 — CONTACT
+══════════════════════════════════ -->
+<section class="page" id="p6">
+<div class="p6-inner">
+  <div>
+    <p style="font-family:'Space Mono',monospace;font-size:10px;color:var(--coral);text-transform:uppercase;letter-spacing:.13em;margin-bottom:8px">Let's Connect</p>
+    <h2 class="p6-heading">Contact <span>Me!</span></h2>
+    <p class="p6-sub" style="margin-top:12px">Open to full-time Software Engineer, Software Developer, and System Analyst roles in Malaysia. Available from August 2026.</p>
+  </div>
+  <div class="contact-links">
+    <a href="mailto:nanabellashah03@gmail.com" class="contact-link">
+      <div class="cl-left"><span class="cl-icon">✉️</span><div><div class="cl-lbl">Email</div><div class="cl-val">nanabellashah03@gmail.com</div></div></div>
+      <span class="c-arrow">→</span>
+    </a>
+    <a href="tel:+60109648871" class="contact-link">
+      <div class="cl-left"><span class="cl-icon">📱</span><div><div class="cl-lbl">Phone</div><div class="cl-val">010-9648871</div></div></div>
+      <span class="c-arrow">→</span>
+    </a>
+    <a href="https://linkedin.com/in/nabilahshahidan" target="_blank" rel="noopener noreferrer" class="contact-link">
+      <div class="cl-left"><span class="cl-icon">💼</span><div><div class="cl-lbl">LinkedIn</div><div class="cl-val">linkedin.com/in/nabilahshahidan</div></div></div>
+      <span class="c-arrow">→</span>
+    </a>
+    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="contact-link">
+      <div class="cl-left"><span class="cl-icon">💻</span><div><div class="cl-lbl">GitHub</div><div class="cl-val">github.com/[your-username]</div></div></div>
+      <span class="c-arrow">→</span>
+    </a>
+  </div>
+  <div class="p6-footer">
+    © 2026 Nabilah Binti Mohammad Shahidan · Klang, Selangor, Malaysia<br>
+    Software Engineering Graduate Portfolio · V3.0
+  </div>
+</div>
+</section>
+
+</div><!-- /scroller -->
+
+<script>
+const scroller = document.getElementById('scroller');
+const pages    = Array.from(document.querySelectorAll('.page'));
+const dots     = Array.from(document.querySelectorAll('#side-dots .dot'));
+const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
+let current = 0;
+
+function goTo(i) {
+  i = Math.max(0, Math.min(pages.length - 1, i));
+  current = i;
+  pages[i].scrollIntoView({ behavior: 'smooth', block: 'start' });
+  sync(i);
+}
+
+function sync(i) {
+  dots.forEach((d, j)     => d.classList.toggle('active', j === i));
+  navLinks.forEach((a, j) => a.classList.toggle('active', j === i));
+}
+
+// IntersectionObserver keeps indicators in sync when scrolling freely
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting && e.intersectionRatio >= 0.5) {
+      current = pages.indexOf(e.target);
+      sync(current);
+    }
+  });
+}, { threshold: 0.5, root: scroller });
+pages.forEach(p => io.observe(p));
+
+// Keyboard
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowDown' || e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
+  if (e.key === 'ArrowUp'   || e.key === 'ArrowLeft')  { e.preventDefault(); goTo(current - 1); }
+});
+
+// Touch swipe
+let ty0 = 0;
+scroller.addEventListener('touchstart', e => { ty0 = e.touches[0].clientY; }, { passive: true });
+scroller.addEventListener('touchend',   e => {
+  const dy = ty0 - e.changedTouches[0].clientY;
+  if (Math.abs(dy) > 48) dy > 0 ? goTo(current + 1) : goTo(current - 1);
+}, { passive: true });
+
+sync(0);
+</script>
+</body>
+</html>

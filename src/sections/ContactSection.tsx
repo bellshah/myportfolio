@@ -123,6 +123,7 @@ export function ContactSection() {
                   className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200/60 dark:border-slate-700/60 shadow-sm p-6 space-y-4"
                 >
                   <input type="hidden" name="form-name" value="contact" />
+                  <input type="hidden" name="bot-field" />
 
                   {[
                     { id: 'name',    label: 'Name',    type: 'text',  placeholder: 'Your full name' },

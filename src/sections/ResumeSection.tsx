@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
-import { Download, ExternalLink, FileText } from 'lucide-react'
+import { ExternalLink, FileText } from 'lucide-react'
 import { SectionWrapper } from '@/components/SectionWrapper'
 import { staggerContainer, fadeInUp } from '@/lib/animations'
 import { personal, education } from '@/data/portfolio'
@@ -52,7 +52,7 @@ export function ResumeSection() {
             </div>
           </motion.div>
 
-          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-3 justify-center">
+          <motion.div variants={fadeInUp} className="flex justify-center">
             <a
               href={personal.resumeUrl}
               target="_blank"
@@ -62,18 +62,10 @@ export function ResumeSection() {
               <ExternalLink size={16} />
               View Resume
             </a>
-            <a
-              href={personal.resumeUrl}
-              download="Nabilah_Resume.pdf"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-c-coral hover:bg-c-coral2 text-white font-medium rounded-lg transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 text-sm"
-            >
-              <Download size={16} />
-              Download PDF
-            </a>
           </motion.div>
 
           <motion.p variants={fadeInUp} className="mt-5 text-xs text-c-dim dark:text-slate-500">
-            PDF resume — view in browser or download directly
+            Opens PDF in browser — use the browser download button to save
           </motion.p>
 
         </motion.div>
