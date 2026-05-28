@@ -4,8 +4,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Nabilah Binti Mohammad Shahidan | Portfolio 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <style>
 /* ─── RESET ─── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -21,16 +19,16 @@ html{font-size:16px}
 }
 
 /* ─── SCROLL CONTAINER ─── */
-body{font-family:'Inter',sans-serif;overflow:hidden;background:var(--navy)}
+body{font-family:'Times New Roman',Times,serif;font-size:12px;overflow:hidden;background:var(--navy)}
 #scroller{height:100vh;overflow-y:scroll;scroll-snap-type:y mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
 .page{height:100vh;scroll-snap-align:start;scroll-snap-stop:always;position:relative;overflow:hidden;display:flex;flex-direction:column}
 
 /* ─── TOP NAV ─── */
 #top-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(13,27,42,0.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:space-between;padding:0 32px}
-.nav-logo{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:.02em}
+.nav-logo{font-family:'Times New Roman',Times,serif;font-size:14px;font-weight:bold;color:var(--white)}
 .nav-logo span{color:var(--coral)}
 .nav-links{display:flex;gap:4px;list-style:none}
-.nav-links a{font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);text-decoration:none;padding:5px 10px;border-radius:4px;transition:all .2s;cursor:pointer}
+.nav-links a{font-family:'Times New Roman',Times,serif;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);text-decoration:none;padding:5px 10px;border-radius:4px;transition:all .2s;cursor:pointer}
 .nav-links a:hover,.nav-links a.active{color:var(--white);background:rgba(255,255,255,.1)}
 
 /* ─── SIDE DOTS ─── */
@@ -41,154 +39,164 @@ body{font-family:'Inter',sans-serif;overflow:hidden;background:var(--navy)}
 /* ─── SHARED PAGE CHROME ─── */
 .page-inner{flex:1;width:100%;margin:0 auto;display:flex;flex-direction:column}
 .page-heading{margin-bottom:24px}
-.page-heading .tag{font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--coral);display:block;margin-bottom:4px}
-.page-heading h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.2vw,42px);font-weight:900;color:var(--navy);line-height:1.1}
-.page-heading.light h2{color:var(--white)}
+.page-heading .tag{font-family:'Times New Roman',Times,serif;font-size:12px;text-transform:uppercase;letter-spacing:.13em;color:var(--coral);display:block;margin-bottom:4px}
+.page-heading h1{font-family:'Times New Roman',Times,serif;font-size:24px;font-weight:bold;color:var(--navy);line-height:1.2}
+.page-heading.light h1{color:var(--white)}
 .page-heading .rule{width:36px;height:3px;background:var(--coral);margin-top:8px;border-radius:2px}
 
 /* ════════════════════════════
    PAGE 1 — INTRODUCTION
 ════════════════════════════ */
-#p1{background:var(--navy);padding-top:52px}
+/* bg-p1.jpg = Introduction background (drop in public/) */
+#p1{background-color:var(--navy);padding-top:52px;background-image:linear-gradient(rgba(13,27,42,.82),rgba(13,27,42,.88)),url('bg-p1.jpg');background-size:cover;background-position:center}
 .p1-inner{flex:1;display:grid;grid-template-columns:1fr 360px;gap:0;max-width:1180px;padding:44px 44px 28px;align-items:center;margin:0 auto;width:100%}
 .p1-left{padding-right:44px}
 .p1-eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:16px}
 .p1-eyebrow-line{width:28px;height:1.5px;background:var(--coral)}
-.p1-eyebrow-text{color:var(--coral);font-size:10px;font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:.14em}
-.p1-name{font-family:'Playfair Display',serif;font-size:clamp(34px,4.6vw,60px);font-weight:900;color:var(--white);line-height:1.07;margin-bottom:8px}
+.p1-eyebrow-text{color:var(--coral);font-size:12px;font-family:'Times New Roman',Times,serif;text-transform:uppercase;letter-spacing:.14em}
+.p1-name{font-family:'Times New Roman',Times,serif;font-size:36px;font-weight:bold;color:var(--white);line-height:1.1;margin-bottom:8px}
 .p1-name .italic{font-style:italic;font-weight:400;color:rgba(255,255,255,.65)}
-.p1-role{font-family:'Space Mono',monospace;font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.14em;margin-bottom:20px}
-.p1-bio{font-size:13.5px;line-height:1.78;color:rgba(255,255,255,.62);max-width:500px;margin-bottom:24px}
+.p1-role{font-family:'Times New Roman',Times,serif;font-size:12px;color:var(--gold);text-transform:uppercase;letter-spacing:.14em;margin-bottom:20px}
+.p1-bio{font-size:12px;line-height:1.78;color:rgba(255,255,255,.62);max-width:500px;margin-bottom:24px}
 .p1-certs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px}
-.cert-badge{display:flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);font-size:11px;color:rgba(255,255,255,.78);font-weight:500}
+.cert-badge{display:flex;align-items:center;gap:6px;padding:4px 11px;border-radius:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);font-size:12px;color:rgba(255,255,255,.78);font-weight:500}
 .cert-badge .dot-c{width:6px;height:6px;border-radius:50%;flex-shrink:0}
 .otw{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:24px;background:rgba(14,165,160,.13);border:1px solid rgba(14,165,160,.36)}
 .otw-pulse{width:8px;height:8px;border-radius:50%;background:#0EA5A0;flex-shrink:0;position:relative}
 .otw-pulse::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1.5px solid #0EA5A0;animation:pr 1.7s ease-out infinite}
 @keyframes pr{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(2.3)}}
 .otw-text{font-size:12px;color:#0EA5A0;font-weight:600;letter-spacing:.04em}
-.otw-sub{font-size:10px;color:rgba(14,165,160,.65);font-family:'Space Mono',monospace}
+.otw-sub{font-size:12px;color:rgba(14,165,160,.65);font-family:'Times New Roman',Times,serif}
 
 /* info card */
 .p1-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px;backdrop-filter:blur(8px)}
-.p1-card-hdr{font-family:'Space Mono',monospace;font-size:9px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.08)}
+.p1-card-hdr{font-family:'Times New Roman',Times,serif;font-size:12px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.08)}
 .p1-fact{display:flex;align-items:flex-start;gap:10px;margin-bottom:13px}
 .p1-fact:last-child{margin-bottom:0}
-.p1-fact-icon{font-size:13px;flex-shrink:0;margin-top:1px}
-.p1-fact-lbl{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--dim)}
+.p1-fact-icon{font-size:14px;flex-shrink:0;margin-top:1px}
+.p1-fact-lbl{font-family:'Times New Roman',Times,serif;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--dim)}
 .p1-fact-val{font-size:12px;color:rgba(255,255,255,.82);margin-top:2px;font-weight:500}
 
 /* ════════════════════════════
    PAGE 2 — EDUCATION
 ════════════════════════════ */
-#p2{background:var(--paper);padding-top:52px}
+/* bg-p2.jpg = Education background */
+#p2{background-color:var(--paper);padding-top:52px;background-image:linear-gradient(rgba(246,248,252,.9),rgba(246,248,252,.9)),url('bg-p2.jpeg');background-size:cover;background-position:center}
 .p2-inner{flex:1;max-width:1100px;margin:0 auto;width:100%;padding:40px 44px 28px;display:flex;flex-direction:column}
 .edu-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;flex:1}
 .edu-card{background:var(--white);border-radius:14px;padding:20px;border:1px solid rgba(13,27,42,.08);box-shadow:0 2px 10px rgba(13,27,42,.05);display:flex;flex-direction:column;gap:11px}
-.edu-tag{display:inline-block;font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.12em;padding:3px 10px;border-radius:10px;background:var(--coral);color:var(--white);width:fit-content}
+.edu-tag{display:inline-block;font-family:'Times New Roman',Times,serif;font-size:12px;text-transform:uppercase;letter-spacing:.12em;padding:3px 10px;border-radius:10px;background:var(--coral);color:var(--white);width:fit-content}
 .edu-tag.teal{background:var(--teal)}
 .edu-tag.gold{background:var(--gold)}
-.edu-degree{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--navy);line-height:1.3}
-.edu-field{font-size:11px;color:var(--coral);font-weight:600;margin-top:2px}
+.edu-degree{font-family:'Times New Roman',Times,serif;font-size:15px;font-weight:700;color:var(--navy);line-height:1.3}
+.edu-field{font-size:12px;color:var(--coral);font-weight:600;margin-top:2px}
 .edu-field.teal{color:var(--teal)}
-.edu-inst{font-size:10.5px;color:var(--dim)}
+.edu-inst{font-size:12px;color:var(--dim)}
 .edu-meta{display:flex;gap:14px;align-items:center}
-.edu-cgpa{font-family:'Playfair Display',serif;font-size:30px;font-weight:900;color:var(--navy);line-height:1}
-.edu-cgpa-lbl{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;color:var(--dim);margin-top:2px}
-.edu-period{font-family:'Space Mono',monospace;font-size:9.5px;color:var(--dim);line-height:1.6}
+.edu-cgpa{font-family:'Times New Roman',Times,serif;font-size:22px;font-weight:bold;color:var(--navy);line-height:1}
+.edu-cgpa-lbl{font-family:'Times New Roman',Times,serif;font-size:12px;text-transform:uppercase;color:var(--dim);margin-top:2px}
+.edu-period{font-family:'Times New Roman',Times,serif;font-size:12px;color:var(--dim);line-height:1.6}
 .edu-honours{display:flex;flex-wrap:wrap;gap:5px}
-.honour-chip{font-size:10px;padding:3px 9px;border-radius:8px;background:rgba(201,168,76,.12);color:var(--gold);border:1px solid rgba(201,168,76,.28);font-weight:500}
+.honour-chip{font-size:12px;padding:3px 9px;border-radius:8px;background:rgba(201,168,76,.12);color:var(--gold);border:1px solid rgba(201,168,76,.28);font-weight:500}
 .cert-list{display:flex;flex-direction:column;gap:7px}
 .cert-item{display:flex;align-items:flex-start;gap:8px;padding:7px 9px;border-radius:8px;background:var(--paper2)}
 .cert-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:4px}
-.cert-name{font-size:11px;font-weight:600;color:var(--navy)}
-.cert-issuer{font-family:'Space Mono',monospace;font-size:9px;color:var(--dim);margin-top:1px}
+.cert-name{font-size:12px;font-weight:600;color:var(--navy)}
+.cert-issuer{font-family:'Times New Roman',Times,serif;font-size:12px;color:var(--dim);margin-top:1px}
 
 /* ════════════════════════════
    PAGE 3 — WORK EXPERIENCE
 ════════════════════════════ */
-#p3{background:var(--navy2);padding-top:52px}
+/* bg-p3.jpg = Work Experience background */
+#p3{background-color:var(--navy2);padding-top:52px;background-image:linear-gradient(rgba(17,34,58,.8),rgba(17,34,58,.86)),url('bg-p3.jpeg');background-size:cover;background-position:center}
 .p3-inner{flex:1;max-width:1150px;margin:0 auto;width:100%;padding:34px 44px 20px;display:flex;flex-direction:column;gap:11px}
 .exp-card{border-radius:14px;padding:16px 20px;border:1px solid rgba(255,255,255,.09)}
 .exp-large{background:rgba(255,255,255,.05);display:flex;flex-direction:column;gap:11px}
 .exp-small{background:rgba(255,255,255,.04);display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .exp-hdr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:7px}
-.exp-company{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--white);line-height:1.3}
-.exp-badge{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:3px 10px;border-radius:8px;background:var(--coral);color:var(--white);flex-shrink:0}
+.exp-company{font-family:'Times New Roman',Times,serif;font-size:15px;font-weight:700;color:var(--white);line-height:1.3}
+.exp-badge{font-family:'Times New Roman',Times,serif;font-size:12px;text-transform:uppercase;letter-spacing:.08em;padding:3px 10px;border-radius:8px;background:var(--coral);color:var(--white);flex-shrink:0}
 .exp-badge.dip{background:var(--teal)}
 .exp-meta{display:flex;flex-wrap:wrap;gap:14px}
 .exp-meta-item{display:flex;flex-direction:column;gap:1px}
-.exp-meta-lbl{font-family:'Space Mono',monospace;font-size:8.5px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.32)}
-.exp-meta-val{font-size:11px;color:rgba(255,255,255,.72);font-weight:500}
+.exp-meta-lbl{font-family:'Times New Roman',Times,serif;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.32)}
+.exp-meta-val{font-size:12px;color:rgba(255,255,255,.72);font-weight:500}
 .exp-divider{height:1px;background:rgba(255,255,255,.07)}
 .p3-projects{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .p3-proj{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:14px 16px}
-.p3-client-tag{font-family:'Space Mono',monospace;font-size:8.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin-bottom:4px}
-.p3-proj-title{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--white);margin-bottom:4px}
-.p3-proj-desc{font-size:10.5px;color:rgba(255,255,255,.55);line-height:1.6;margin-bottom:9px}
+.p3-client-tag{font-family:'Times New Roman',Times,serif;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin-bottom:4px}
+.p3-proj-title{font-family:'Times New Roman',Times,serif;font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px}
+.p3-proj-desc{font-size:12px;color:rgba(255,255,255,.55);line-height:1.6;margin-bottom:9px}
 .p3-proj-tech{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:9px}
-.tech-pill{font-family:'Space Mono',monospace;font-size:8.5px;padding:2px 7px;border-radius:5px;background:rgba(47,116,220,.13);color:rgba(91,148,240,.95);border:1px solid rgba(47,116,220,.28)}
-.p3-proj-link{display:inline-flex;align-items:center;gap:5px;font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--teal);text-decoration:none;border:1px solid rgba(14,165,160,.38);padding:4px 10px;border-radius:6px;transition:all .2s}
+.tech-pill{font-family:'Times New Roman',Times,serif;font-size:12px;padding:2px 7px;border-radius:5px;background:rgba(47,116,220,.13);color:rgba(91,148,240,.95);border:1px solid rgba(47,116,220,.28)}
+.p3-proj-link{display:inline-flex;align-items:center;gap:5px;font-family:'Times New Roman',Times,serif;font-size:12px;text-transform:uppercase;letter-spacing:.09em;color:var(--teal);text-decoration:none;border:1px solid rgba(14,165,160,.38);padding:4px 10px;border-radius:6px;transition:all .2s}
 .p3-proj-link:hover{background:rgba(14,165,160,.14)}
 .p3-resp{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .resp-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:12px 10px;text-align:center;position:relative}
-.resp-n{font-family:'Space Mono',monospace;font-size:8.5px;color:var(--coral);text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px}
+.resp-n{font-family:'Times New Roman',Times,serif;font-size:12px;color:var(--coral);text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px}
 .resp-icon{font-size:18px;margin-bottom:5px}
-.resp-title{font-size:11px;font-weight:600;color:var(--white);margin-bottom:3px}
-.resp-desc{font-size:9.5px;color:rgba(255,255,255,.48);line-height:1.5}
+.resp-title{font-size:12px;font-weight:600;color:var(--white);margin-bottom:3px}
+.resp-desc{font-size:12px;color:rgba(255,255,255,.48);line-height:1.5}
 .resp-arrow{position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:var(--coral);font-size:16px;font-weight:700;z-index:2;pointer-events:none}
 .exp-bullets{display:flex;flex-direction:column;gap:6px}
-.exp-bullet{display:flex;gap:7px;font-size:10.5px;color:rgba(255,255,255,.6);line-height:1.55}
+.exp-bullet{display:flex;gap:7px;font-size:12px;color:rgba(255,255,255,.6);line-height:1.55}
 .exp-bullet-dot{width:4px;height:4px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:5px}
 
 /* ════════════════════════════
    PAGE 4 — SKILLS
 ════════════════════════════ */
-#p4{background:var(--paper);padding-top:52px}
-.p4-inner{flex:1;max-width:1100px;margin:0 auto;width:100%;padding:38px 44px 24px;display:flex;flex-direction:column}
-.p4-body{display:grid;grid-template-columns:1fr 1fr;gap:24px;flex:1}
-.skills-col{display:flex;flex-direction:column;gap:13px;overflow-y:auto;padding-right:4px}
-.skill-group-lbl{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+/* bg-p4.jpg = Skills background */
+#p4{background-color:var(--paper);padding-top:52px;background-image:linear-gradient(rgba(246,248,252,.9),rgba(246,248,252,.9)),url('bg-p4.jpeg');background-size:cover;background-position:center}
+.p4-inner{flex:1;max-width:1100px;margin:0 auto;width:100%;padding:28px 44px 16px;display:flex;flex-direction:column;gap:12px}
+.p4-skills-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;flex:1;min-height:0}
+.skills-col{display:flex;flex-direction:column;justify-content:space-between;overflow-y:auto;padding-right:4px}
+.skill-group-lbl{font-family:'Times New Roman',Times,serif;font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:4px;display:flex;align-items:center;gap:8px}
 .skill-group-lbl::after{content:'';flex:1;height:1px;background:rgba(13,27,42,.1)}
-.skill-pills{display:flex;flex-wrap:wrap;gap:5px}
-.skill-pill{font-size:11px;padding:4px 10px;border-radius:6px;background:var(--white);color:var(--navy);border:1px solid rgba(13,27,42,.11);font-weight:500;box-shadow:0 1px 3px rgba(13,27,42,.05)}
-.academic-box{background:var(--navy);border-radius:12px;padding:18px;color:var(--white);margin-top:4px}
-.academic-box h3{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--white);margin-bottom:12px}
-.academic-item{display:flex;gap:7px;font-size:10.5px;color:rgba(255,255,255,.68);line-height:1.45;margin-bottom:6px}
-.academic-item::before{content:'›';color:var(--coral);font-size:13px;flex-shrink:0;font-weight:700}
+.skill-pills{display:flex;flex-wrap:wrap;gap:4px}
+.skill-pill{font-size:12px;padding:3px 8px;border-radius:5px;background:var(--white);color:var(--navy);border:1px solid rgba(13,27,42,.11);font-weight:500;box-shadow:0 1px 2px rgba(13,27,42,.05)}
+.academic-box{background:var(--navy);border-radius:10px;padding:14px 18px;color:var(--white)}
+.academic-box-hdr{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.academic-box-hdr h3{font-family:'Times New Roman',Times,serif;font-size:14px;font-weight:700;color:var(--white)}
+.academic-box-hdr::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.12)}
+.academic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px 14px}
+.academic-item{display:flex;gap:5px;font-size:12px;color:rgba(255,255,255,.68);line-height:1.4}
+.academic-item::before{content:'›';color:var(--coral);font-size:12px;flex-shrink:0;font-weight:700}
 
 /* ════════════════════════════
    PAGE 5 — OTHER INVOLVEMENT
 ════════════════════════════ */
-#p5{background:var(--white);padding-top:52px}
-.p5-inner{flex:1;max-width:1150px;margin:0 auto;width:100%;padding:38px 44px 24px;display:flex;flex-direction:column;gap:16px}
-.deans-banner{background:linear-gradient(135deg,var(--navy) 0%,var(--navy3) 100%);border-radius:14px;padding:16px 22px;display:flex;align-items:center;gap:18px}
+/* bg-p5.jpg = Other Involvement background */
+#p5{background-color:var(--white);padding-top:52px;background-image:linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),url('bg-p5.jpeg');background-size:cover;background-position:center}
+.p5-inner{flex:1;max-width:1150px;margin:0 auto;width:100%;padding:28px 44px 16px;display:flex;flex-direction:column;gap:12px}
+.p5-photo-col{display:flex;flex-direction:column;height:100%}
+.p5-photo-col .photo-mosaic{flex:1;min-height:0}
+.deans-banner{background:linear-gradient(135deg,var(--navy) 0%,var(--navy3) 100%);border-radius:14px;padding:12px 20px;display:flex;align-items:center;gap:16px}
 .deans-icon{font-size:34px}
-.deans-text h3{font-family:'Playfair Display',serif;font-size:19px;font-weight:900;color:var(--gold)}
-.deans-text p{font-size:11.5px;color:rgba(255,255,255,.65);margin-top:2px}
+.deans-text h3{font-family:'Times New Roman',Times,serif;font-size:16px;font-weight:bold;color:var(--gold)}
+.deans-text p{font-size:12px;color:rgba(255,255,255,.65);margin-top:2px}
 .deans-badges{margin-left:auto;display:flex;gap:7px;flex-shrink:0}
-.deans-badge{padding:4px 12px;border-radius:20px;background:rgba(201,168,76,.14);border:1px solid rgba(201,168,76,.38);font-family:'Space Mono',monospace;font-size:9px;color:var(--gold);text-transform:uppercase;letter-spacing:.08em}
-.p5-cols{display:grid;grid-template-columns:1fr 1fr 270px;gap:20px;flex:1}
-.p5-sec-title{font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:9px}
-.event-list{display:flex;flex-direction:column;gap:7px}
-.event-card{background:var(--paper2);border-radius:10px;padding:11px 13px;border-left:3px solid var(--coral)}
+.deans-badge{padding:4px 12px;border-radius:20px;background:rgba(201,168,76,.14);border:1px solid rgba(201,168,76,.38);font-family:'Times New Roman',Times,serif;font-size:12px;color:var(--gold);text-transform:uppercase;letter-spacing:.08em}
+.p5-cols{display:grid;grid-template-columns:1fr 1fr 260px;gap:16px;flex:1}
+.p5-sec-title{font-family:'Times New Roman',Times,serif;font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:7px}
+.event-list{display:flex;flex-direction:column;gap:5px}
+.event-card{background:var(--paper2);border-radius:8px;padding:8px 11px;border-left:3px solid var(--coral)}
 .event-card.org{border-left-color:var(--teal)}
-.event-title{font-size:11.5px;font-weight:600;color:var(--navy)}
-.event-meta{font-family:'Space Mono',monospace;font-size:9px;color:var(--dim);margin-top:2px}
-.photo-mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:7px;flex:1}
-.photo-placeholder{border-radius:8px;background:var(--paper);border:2px dashed rgba(13,27,42,.14);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:9px;color:var(--dim);text-align:center;line-height:1.6;padding:8px;overflow:hidden}
-.photo-placeholder:first-child{grid-column:span 2}
-.photo-placeholder img{width:100%;height:100%;object-fit:cover;border-radius:6px}
+.event-title{font-size:12px;font-weight:600;color:var(--navy)}
+.event-meta{font-family:'Times New Roman',Times,serif;font-size:12px;color:var(--dim);margin-top:1px}
+.photo-mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,1fr);gap:5px;flex:1}
+.photo-placeholder{border-radius:6px;background:var(--paper);border:1px solid rgba(13,27,42,.1);display:flex;align-items:center;justify-content:center;font-family:'Times New Roman',Times,serif;font-size:12px;color:var(--dim);text-align:center;line-height:1.5;overflow:hidden}
+.photo-placeholder img{width:100%;height:100%;object-fit:cover;border-radius:5px}
 
 /* ════════════════════════════
    PAGE 6 — CONTACT
 ════════════════════════════ */
-#p6{background:var(--navy);padding-top:52px}
+/* bg-p6.jpg = Contact background */
+#p6{background-color:var(--navy);padding-top:52px;background-image:linear-gradient(rgba(13,27,42,.82),rgba(13,27,42,.88)),url('bg-p6.jpeg');background-size:cover;background-position:center}
 .p6-inner{flex:1;max-width:1100px;margin:0 auto;width:100%;padding:38px 44px 28px;display:flex;flex-direction:column;gap:24px}
 .p6-top{text-align:center}
-.p6-heading{font-family:'Playfair Display',serif;font-size:clamp(28px,3.8vw,48px);font-weight:900;color:var(--white);line-height:1.08}
+.p6-heading{font-family:'Times New Roman',Times,serif;font-size:24px;font-weight:bold;color:var(--white);line-height:1.2}
 .p6-heading span{color:var(--coral);font-style:italic}
-.p6-sub{font-size:13px;color:rgba(255,255,255,.5);line-height:1.72;margin-top:8px}
+.p6-sub{font-size:14px;color:rgba(255,255,255,.5);line-height:1.72;margin-top:8px}
 .p6-body{display:grid;grid-template-columns:1fr 1fr;gap:28px;flex:1}
 .contact-links{display:flex;flex-direction:column;gap:9px}
 .contact-link{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);text-decoration:none;transition:all .22s}
@@ -196,21 +204,21 @@ body{font-family:'Inter',sans-serif;overflow:hidden;background:var(--navy)}
 .contact-link:hover .c-arrow{transform:translateX(5px)}
 .cl-left{display:flex;align-items:center;gap:11px}
 .cl-icon{font-size:16px}
-.cl-lbl{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--dim)}
+.cl-lbl{font-family:'Times New Roman',Times,serif;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--dim)}
 .cl-val{font-size:12px;color:var(--white);font-weight:500;margin-top:1px}
 .c-arrow{font-size:16px;color:var(--coral);transition:transform .22s}
-.p6-refs-title{font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:10px}
+.p6-refs-title{font-family:'Times New Roman',Times,serif;font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:10px}
 .ref-cards{display:flex;flex-direction:column;gap:10px}
 .ref-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:14px 16px}
-.ref-name{font-family:'Playfair Display',serif;font-size:13.5px;font-weight:700;color:var(--white);margin-bottom:2px}
-.ref-role{font-size:10.5px;color:var(--coral);font-weight:600;margin-bottom:6px}
-.ref-inst{font-size:10px;color:rgba(255,255,255,.55);margin-bottom:8px;line-height:1.5}
+.ref-name{font-family:'Times New Roman',Times,serif;font-size:12px;font-weight:700;color:var(--white);margin-bottom:2px}
+.ref-role{font-size:12px;color:var(--coral);font-weight:600;margin-bottom:6px}
+.ref-inst{font-size:12px;color:rgba(255,255,255,.55);margin-bottom:8px;line-height:1.5}
 .ref-contacts{display:flex;flex-direction:column;gap:3px}
-.ref-contact{display:flex;align-items:center;gap:7px;font-size:10.5px;color:rgba(255,255,255,.65)}
+.ref-contact{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,.65)}
 .ref-contact a{color:rgba(255,255,255,.65);text-decoration:none;transition:color .2s}
 .ref-contact a:hover{color:#7DB8F7}
-.ref-contact-icon{font-size:11px;flex-shrink:0}
-.p6-footer{font-family:'Space Mono',monospace;font-size:9.5px;color:rgba(255,255,255,.22);text-align:center;line-height:1.8}
+.ref-contact-icon{font-size:12px;flex-shrink:0}
+.p6-footer{font-family:'Times New Roman',Times,serif;font-size:12px;color:rgba(255,255,255,.22);text-align:center;line-height:1.8}
 
 /* ─── RESPONSIVE ─── */
 @media(max-width:900px){
@@ -269,7 +277,7 @@ body{font-family:'Inter',sans-serif;overflow:hidden;background:var(--navy)}
     </div>
     <h1 class="p1-name">Nabilah<br><span class="italic">binti</span> Mohammad<br>Shahidan</h1>
     <div class="p1-role">Software Engineering Graduate · UMPSA · Class of 2026</div>
-    <p class="p1-bio">UMPSA qualification: Diploma in Computer Science and Bachelor of Computer Science (Software Engineering) at the same institution. Currently serving as AI &amp; Digitalization Intern at TNB Renewables Sdn. Bhd., where I independently developed and deployed a production web system automating while handling and supporting operational tasks assigned across multiple departments by my supervisor..</p>
+    <p class="p1-bio">UMPSA qualification: Diploma in Computer Science and Bachelor of Computer Science (Software Engineering) with Hons at the same institution. Currently serving as AI &amp; Digitalization Intern at TNB Renewables Sdn. Bhd., where I independently developed and deployed a production web system automating while handling and supporting operational tasks assigned across multiple departments by my supervisor..</p>
     <div class="p1-certs">
       <div class="cert-badge"><div class="dot-c" style="background:#4CAF50"></div>ISC2 Certified in Cybersecurity</div>
       <div class="cert-badge"><div class="dot-c" style="background:#F59E0B"></div>Anthropic Claude API &amp; Agent Skills</div>
@@ -285,11 +293,11 @@ body{font-family:'Inter',sans-serif;overflow:hidden;background:var(--navy)}
   </div>
   <div class="p1-card">
     <div class="p1-card-hdr">Quick Facts</div>
-    <div class="p1-fact"><span class="p1-fact-icon">🎓</span><div><div class="p1-fact-lbl">Qualification</div><div class="p1-fact-val">Bachelor of Computer Science in Software Engineering with Hons.</div></div></div>
+    <div class="p1-fact"><span class="p1-fact-icon">🎓</span><div><div class="p1-fact-lbl">Qualification</div><div class="p1-fact-val">Bachelor of Computer Science in Software Engineering with Hons</div></div></div>
     <div class="p1-fact"><span class="p1-fact-icon">📊</span><div><div class="p1-fact-lbl">CGPA</div><div class="p1-fact-val">3.31 / 4.00 · Dean's List Semester 5</div></div></div>
-    <div class="p1-fact"><span class="p1-fact-icon">🏢</span><div><div class="p1-fact-lbl">Internship</div><div class="p1-fact-val">AI &amp; Digitalization · TNB Renewables</div></div></div>
+    <div class="p1-fact"><span class="p1-fact-icon">🏢</span><div><div class="p1-fact-lbl">Internship</div><div class="p1-fact-val">AI &amp; Digitalization · TNB Renewables Sdn. Bhd.</div></div></div>
     <div class="p1-fact"><span class="p1-fact-icon">📍</span><div><div class="p1-fact-lbl">Based in</div><div class="p1-fact-val">Klang, Selangor, Malaysia</div></div></div>
-    <div class="p1-fact"><span class="p1-fact-icon">🌐</span><div><div class="p1-fact-lbl">Open to</div><div class="p1-fact-val">Selangor · KL · Pahang</div><div style="font-size:10.5px;color:var(--teal);margin-top:2px;font-weight:500">On-site · Hybrid · Remote</div></div></div>
+    <div class="p1-fact"><span class="p1-fact-icon">🌐</span><div><div class="p1-fact-lbl">Open to</div><div class="p1-fact-val">Selangor · KL · Pahang</div><div style="font-size:12px;color:var(--teal);margin-top:2px;font-weight:500">On-site · Hybrid · Remote</div></div></div>
     <div class="p1-fact"><span class="p1-fact-icon">📧</span><div><div class="p1-fact-lbl">Email</div><div class="p1-fact-val">nanabellashah03@gmail.com</div></div></div>
     <div class="p1-fact"><span class="p1-fact-icon">📱</span><div><div class="p1-fact-lbl">Phone</div><div class="p1-fact-val">+6010-9648871</div></div></div>
   </div>
@@ -303,7 +311,7 @@ body{font-family:'Inter',sans-serif;overflow:hidden;background:var(--navy)}
 <div class="p2-inner">
   <div class="page-heading">
     <span class="tag">Academic Qualifications</span>
-    <h2>My Education</h2>
+    <h1>My Education</h1>
     <div class="rule"></div>
   </div>
   <div class="edu-grid">
@@ -366,7 +374,7 @@ body{font-family:'Inter',sans-serif;overflow:hidden;background:var(--navy)}
 <div class="p3-inner">
   <div class="page-heading light">
     <span class="tag">Professional Experience</span>
-    <h2>My Work Experience</h2>
+    <h1>My Work Experience</h1>
     <div class="rule"></div>
   </div>
 
@@ -379,10 +387,10 @@ body{font-family:'Inter',sans-serif;overflow:hidden;background:var(--navy)}
       </div>
       <div class="exp-meta">
         <div class="exp-meta-item"><div class="exp-meta-lbl">Title</div><div class="exp-meta-val">AI &amp; Digitalization Intern</div></div>
+        <div class="exp-meta-item"><div class="exp-meta-lbl">Department</div><div class="exp-meta-val">AI &amp; Digitalization</div></div>
         <div class="exp-meta-item"><div class="exp-meta-lbl">Period</div><div class="exp-meta-val">Mar 2026 – Aug 2026</div></div>
         <div class="exp-meta-item"><div class="exp-meta-lbl">Duration</div><div class="exp-meta-val">6 Months</div></div>
         <div class="exp-meta-item"><div class="exp-meta-lbl">Location</div><div class="exp-meta-val">Bangsar, WP Kuala Lumpur</div></div>
-        <div class="exp-meta-item"><div class="exp-meta-lbl">Department</div><div class="exp-meta-val">AI &amp; Digitalization</div></div>
       </div>
     </div>
     <div class="exp-divider"></div>
@@ -409,7 +417,7 @@ body{font-family:'Inter',sans-serif;overflow:hidden;background:var(--navy)}
     <div class="p3-resp">
       <div class="resp-card"><div class="resp-n">01</div><div class="resp-icon">🛠️</div><div class="resp-title">Develop</div><div class="resp-desc">Built &amp; deployed both systems to production for real clients</div><span class="resp-arrow">›</span></div>
       <div class="resp-card"><div class="resp-n">02</div><div class="resp-icon">🧪</div><div class="resp-title">Test</div><div class="resp-desc">Conducted UAT with HR &amp; Procurement teams before go-live</div><span class="resp-arrow">›</span></div>
-      <div class="resp-card"><div class="resp-n">03</div><div class="resp-icon">💬</div><div class="resp-title">Got Feedback</div><div class="resp-desc">Received direct feedback from HR &amp; Procurement clients</div><span class="resp-arrow">›</span></div>
+      <div class="resp-card"><div class="resp-n">03</div><div class="resp-icon">💬</div><div class="resp-title">Feedback</div><div class="resp-desc">Received direct feedback from HR &amp; Procurement clients</div><span class="resp-arrow">›</span></div>
       <div class="resp-card"><div class="resp-n">04</div><div class="resp-icon">🔄</div><div class="resp-title">Improvement</div><div class="resp-desc">Iterated both systems based on client feedback post-launch</div></div>
     </div>
   </div>
@@ -423,12 +431,14 @@ body{font-family:'Inter',sans-serif;overflow:hidden;background:var(--navy)}
       </div>
       <div class="exp-meta">
         <div class="exp-meta-item"><div class="exp-meta-lbl">Title</div><div class="exp-meta-val">IT / Computer Science Intern</div></div>
+        <div class="exp-meta-item"><div class="exp-meta-lbl">Department</div><div class="exp-meta-val">IT</div></div>
         <div class="exp-meta-item"><div class="exp-meta-lbl">Period</div><div class="exp-meta-val">Mar 2023 – Aug 2023</div></div>
+        <div class="exp-meta-item"><div class="exp-meta-lbl">Duration</div><div class="exp-meta-val">6 Months</div></div>
         <div class="exp-meta-item"><div class="exp-meta-lbl">Location</div><div class="exp-meta-val">Klang, Selangor</div></div>
       </div>
     </div>
     <div>
-      <div style="font-family:'Space Mono',monospace;font-size:8.5px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.32);margin-bottom:8px">Client: All Departments</div>
+      <div style="font-family:'Times New Roman',Times,serif;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.32);margin-bottom:8px">Client: All Departments</div>
       <div class="exp-bullets">
         <div class="exp-bullet"><div class="exp-bullet-dot"></div>Supported all departments with essential administrative and organizational functions</div>
         <div class="exp-bullet"><div class="exp-bullet-dot"></div>Handled precise data entry and comprehensive documentation and filing management</div>
@@ -447,33 +457,36 @@ body{font-family:'Inter',sans-serif;overflow:hidden;background:var(--navy)}
 <div class="p4-inner">
   <div class="page-heading">
     <span class="tag">Technical Competencies</span>
-    <h2>What I Bring to The Table</h2>
+    <h1>What I Bring to The Table</h1>
     <div class="rule"></div>
   </div>
-  <div class="p4-body">
+  <div class="p4-skills-row">
     <div class="skills-col">
-      <div><div class="skill-group-lbl">Programming</div><div class="skill-pills"><span class="skill-pill">Python</span><span class="skill-pill">Java</span><span class="skill-pill">JavaScript</span><span class="skill-pill">PHP</span><span class="skill-pill">C</span><span class="skill-pill">SQL</span></div></div>
-      <div><div class="skill-group-lbl">Frontend</div><div class="skill-pills"><span class="skill-pill">HTML5</span><span class="skill-pill">CSS3</span><span class="skill-pill">Bootstrap 5</span><span class="skill-pill">React Native</span><span class="skill-pill">WordPress</span></div></div>
-      <div><div class="skill-group-lbl">Backend</div><div class="skill-pills"><span class="skill-pill">Flask</span><span class="skill-pill">Laravel</span><span class="skill-pill">Jinja2</span><span class="skill-pill">smtplib</span><span class="skill-pill">REST APIs</span></div></div>
-      <div><div class="skill-group-lbl">Database</div><div class="skill-pills"><span class="skill-pill">MySQL</span><span class="skill-pill">SQLite</span><span class="skill-pill">phpMyAdmin</span></div></div>
-      <div><div class="skill-group-lbl">QA &amp; Support</div><div class="skill-pills"><span class="skill-pill">UAT Testing</span><span class="skill-pill">SRS Writing</span><span class="skill-pill">Requirements Gathering</span><span class="skill-pill">SDLC</span><span class="skill-pill">Agile</span></div></div>
+      <div><div class="skill-group-lbl">Programming Languages</div><div class="skill-pills"><span class="skill-pill">Python</span><span class="skill-pill">C/C++</span><span class="skill-pill">PHP</span><span class="skill-pill">JavaScript</span><span class="skill-pill">SQL</span></div></div>
+      <div><div class="skill-group-lbl">Frontend</div><div class="skill-pills"><span class="skill-pill">React Native</span><span class="skill-pill">HTML5</span><span class="skill-pill">CSS3</span><span class="skill-pill">Responsive Web Design</span><span class="skill-pill">API Integration</span></div></div>
+      <div><div class="skill-group-lbl">Backend</div><div class="skill-pills"><span class="skill-pill">Laravel</span><span class="skill-pill">RESTful APIs</span><span class="skill-pill">Authentication &amp; Authorization</span><span class="skill-pill">CRUD Operations</span></div></div>
+      <div><div class="skill-group-lbl">Database</div><div class="skill-pills"><span class="skill-pill">MySQL</span><span class="skill-pill">Database Management</span></div></div>
+      <div><div class="skill-group-lbl">QA &amp; Technical Support</div><div class="skill-pills"><span class="skill-pill">Quality Assurance (QA)</span><span class="skill-pill">Quality Control (QC)</span><span class="skill-pill">Software Testing &amp; Debugging</span><span class="skill-pill">Documentation &amp; Record Management</span><span class="skill-pill">Requirement Analysis</span><span class="skill-pill">Data Verification &amp; Validation</span><span class="skill-pill">Process Improvement</span><span class="skill-pill">Report Preparation</span></div></div>
     </div>
     <div class="skills-col">
-      <div><div class="skill-group-lbl">Deployment</div><div class="skill-pills"><span class="skill-pill">AWS</span><span class="skill-pill">Render.com</span><span class="skill-pill">Gunicorn</span><span class="skill-pill">Netlify</span><span class="skill-pill">GitHub</span></div></div>
-      <div><div class="skill-group-lbl">Tools</div><div class="skill-pills"><span class="skill-pill">VS Code</span><span class="skill-pill">Power BI</span><span class="skill-pill">Figma</span><span class="skill-pill">Android Studio</span><span class="skill-pill">Canva</span><span class="skill-pill">Photoshop</span></div></div>
-      <div><div class="skill-group-lbl">OS</div><div class="skill-pills"><span class="skill-pill">Windows</span><span class="skill-pill">Linux (Ubuntu)</span></div></div>
-      <div><div class="skill-group-lbl">Office Tools</div><div class="skill-pills"><span class="skill-pill">Microsoft Word</span><span class="skill-pill">Excel</span><span class="skill-pill">PowerPoint</span><span class="skill-pill">Teams</span></div></div>
-      <div class="academic-box">
-        <h3>Academic Foundation: SE Coursework</h3>
-        <div class="academic-item">Software Requirements Engineering</div>
-        <div class="academic-item">Software Design &amp; Architecture</div>
-        <div class="academic-item">Software Testing &amp; Quality Assurance</div>
-        <div class="academic-item">Database Systems &amp; Administration</div>
-        <div class="academic-item">Web Application Development</div>
-        <div class="academic-item">Network Security Fundamentals</div>
-        <div class="academic-item">Human-Computer Interaction</div>
-        <div class="academic-item">Object-Oriented Programming</div>
-      </div>
+      <div><div class="skill-group-lbl">Version Control &amp; Deployment</div><div class="skill-pills"><span class="skill-pill">Git</span><span class="skill-pill">GitHub</span><span class="skill-pill">Netlify</span><span class="skill-pill">Render</span><span class="skill-pill">InfinityFree</span></div></div>
+      <div><div class="skill-group-lbl">Tools</div><div class="skill-pills"><span class="skill-pill">Visual Studio Code</span><span class="skill-pill">Android Studio</span><span class="skill-pill">Apache NetBeans IDE</span><span class="skill-pill">Postman</span><span class="skill-pill">Figma</span><span class="skill-pill">Canva</span><span class="skill-pill">Lucidchart</span></div></div>
+      <div><div class="skill-group-lbl">Operating Systems</div><div class="skill-pills"><span class="skill-pill">Windows</span><span class="skill-pill">Linux</span></div></div>
+      <div><div class="skill-group-lbl">Office Tools</div><div class="skill-pills"><span class="skill-pill">Microsoft Word</span><span class="skill-pill">Excel</span><span class="skill-pill">PowerPoint</span><span class="skill-pill">Power BI</span></div></div>
+      <div><div class="skill-group-lbl">Soft Skills</div><div class="skill-pills"><span class="skill-pill">Leadership &amp; Strategic Decision-Making</span><span class="skill-pill">Time Management &amp; Organization</span><span class="skill-pill">Teamwork &amp; Collaboration</span><span class="skill-pill">Adaptability &amp; Problem-Solving</span><span class="skill-pill">Analytical Thinking</span></div></div>
+    </div>
+  </div>
+  <div class="academic-box">
+    <div class="academic-box-hdr"><h3>Academic Foundation: SE Coursework</h3></div>
+    <div class="academic-grid">
+      <div class="academic-item">Software Requirements Engineering</div>
+      <div class="academic-item">Software Design &amp; Architecture</div>
+      <div class="academic-item">Software Testing &amp; Quality Assurance</div>
+      <div class="academic-item">Database Systems &amp; Administration</div>
+      <div class="academic-item">Web Application Development</div>
+      <div class="academic-item">Network Security Fundamentals</div>
+      <div class="academic-item">Human-Computer Interaction</div>
+      <div class="academic-item">Object-Oriented Programming</div>
     </div>
   </div>
 </div>
@@ -486,7 +499,7 @@ body{font-family:'Inter',sans-serif;overflow:hidden;background:var(--navy)}
 <div class="p5-inner">
   <div class="page-heading">
     <span class="tag">Beyond the Classroom</span>
-    <h2>Other Involvement</h2>
+    <h1>Other Involvement</h1>
     <div class="rule"></div>
   </div>
   <div class="deans-banner">
@@ -504,28 +517,30 @@ body{font-family:'Inter',sans-serif;overflow:hidden;background:var(--navy)}
     <div>
       <div class="p5-sec-title">As Participant</div>
       <div class="event-list">
-        <div class="event-card"><div class="event-title">IFACS 2025</div><div class="event-meta">International Festival on AI &amp; Cyber Security · Nov 2025</div></div>
+        <div class="event-card"><div class="event-title">Ready4AI &amp; Security</div><div class="event-meta">Pusat Kecerdasan Buatan &amp; Sains Data, UMPSA · Nov – Dec 2024</div></div>
         <div class="event-card"><div class="event-title">Power BI Crash Course</div><div class="event-meta">Data Visualisation &amp; Dashboard Building · May 2025</div></div>
         <div class="event-card"><div class="event-title">International Carnival: Inclusive Technology</div><div class="event-meta">International Carnival in Inclusive Tech &amp; Ecosystem · May 2025</div></div>
-        <div class="event-card"><div class="event-title">UMPSA Innovation &amp; Technology Showcase</div><div class="event-meta">Faculty of Computing · 2024</div></div>
+        <div class="event-card"><div class="event-title">IFACS 2025</div><div class="event-meta">International Festival on AI &amp; Cyber Security · Nov 2025</div></div>
       </div>
     </div>
     <div>
-      <div class="p5-sec-title">As Organiser, UMPSA PEKA 5</div>
+      <div class="p5-sec-title">As Organizer, UMPSA PEKA 5</div>
       <div class="event-list">
-        <div class="event-card org"><div class="event-title">Escape Resident</div><div class="event-meta">UMPSA PEKA 5 · Committee Member</div></div>
-        <div class="event-card org"><div class="event-title">Color Run</div><div class="event-meta">UMPSA PEKA 5 · May 2024</div></div>
         <div class="event-card org"><div class="event-title">Program Inisiatif Pucuk Hijau UMW</div><div class="event-meta">UMPSA PEKA 5 · November 2023</div></div>
+        <div class="event-card org"><div class="event-title">Escape Resident</div><div class="event-meta">UMPSA PEKA 5 · 2024</div></div>
+        <div class="event-card org"><div class="event-title">Color Run</div><div class="event-meta">UMPSA PEKA 5 · May 2024</div></div>
+        <div class="event-card org"><div class="event-title">Riang Ria Raya</div><div class="event-meta">UMPSA PEKA 5 · May 2024</div></div>
       </div>
     </div>
-    <div>
+    <div class="p5-photo-col">
       <div class="p5-sec-title">Photo Gallery</div>
-      <div class="photo-mosaic" style="height:200px">
-        <!-- Replace <div class="photo-placeholder"> with:
-             <img src="your-photo.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:6px"> -->
-        <div class="photo-placeholder">📸 Add photo<br>(replaces this div)</div>
-        <div class="photo-placeholder">📸 Photo 2</div>
-        <div class="photo-placeholder">📸 Photo 3</div>
+      <div class="photo-mosaic">
+        <div class="photo-placeholder"><img src="pucuk-hijau.jpg" alt="Program Inisiatif Pucuk Hijau UMW"></div>
+        <div class="photo-placeholder"><img src="pucuk-hijau-ramai.jpg" alt="Program Inisiatif Pucuk Hijau UMW"></div>
+        <div class="photo-placeholder"><img src="escape-resident.jpg" alt="Escape Resident"></div>
+        <div class="photo-placeholder"><img src="color-run.jpg" alt="Color Run"></div>
+        <div class="photo-placeholder"><img src="riang-raya.jpg" alt="Riang Ria Raya"></div>
+        <div class="photo-placeholder"><img src="cybersecurity.jpg" alt="Cybersecurity Event"></div>
       </div>
     </div>
   </div>
@@ -538,8 +553,8 @@ body{font-family:'Inter',sans-serif;overflow:hidden;background:var(--navy)}
 <section class="page" id="p6">
 <div class="p6-inner">
   <div class="p6-top">
-    <p style="font-family:'Space Mono',monospace;font-size:10px;color:var(--coral);text-transform:uppercase;letter-spacing:.13em;margin-bottom:8px">Let's Connect</p>
-    <h2 class="p6-heading">Contact <span>Me!</span></h2>
+    <p style="font-family:'Times New Roman',Times,serif;font-size:12px;color:var(--coral);text-transform:uppercase;letter-spacing:.13em;margin-bottom:8px">Let's Connect</p>
+    <h1 class="p6-heading">Contact <span>Me!</span></h1>
     <p class="p6-sub">Open to full-time Software Engineer, Software Developer, and System Analyst roles in Malaysia. Available from August 2026.</p>
   </div>
   <div class="p6-body">
