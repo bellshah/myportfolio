@@ -220,21 +220,88 @@ body{font-family:'Times New Roman',Times,serif;font-size:12px;overflow:hidden;ba
 .ref-contact-icon{font-size:12px;flex-shrink:0}
 .p6-footer{font-family:'Times New Roman',Times,serif;font-size:12px;color:rgba(255,255,255,.22);text-align:center;line-height:1.8}
 
-/* ─── RESPONSIVE ─── */
+/* ─── HAMBURGER BUTTON ─── */
+#hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;border:none;background:none}
+#hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:all .3s}
+#hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+#hamburger.open span:nth-child(2){opacity:0}
+#hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+#mobile-menu{display:none;position:fixed;top:52px;left:0;right:0;z-index:99;background:rgba(13,27,42,.97);backdrop-filter:blur(14px);padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+#mobile-menu.open{display:block}
+#mobile-menu a{display:block;padding:10px 28px;font-family:'Times New Roman',Times,serif;font-size:12px;color:rgba(255,255,255,.7);text-decoration:none;text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid rgba(255,255,255,.05);transition:all .2s}
+#mobile-menu a:hover{color:var(--white);background:rgba(255,255,255,.06)}
+
+/* ─── TABLET (≤ 900px) ─── */
 @media(max-width:900px){
+  #hamburger{display:flex}
   #top-nav .nav-links{display:none}
-  .p1-inner{grid-template-columns:1fr;padding:20px 18px 16px}
+  #side-dots{display:none}
+  .p1-inner{grid-template-columns:1fr;padding:24px 20px 16px;align-items:start}
   .p1-card{display:none}
-  .p2-inner,.p3-inner,.p4-inner,.p5-inner,.p6-inner{padding:20px 18px 16px}
-  .edu-grid{grid-template-columns:1fr;overflow-y:auto}
+  .p1-name{font-size:28px}
+  .p2-inner,.p3-inner,.p4-inner,.p5-inner,.p6-inner{padding:24px 20px 16px}
+  .edu-grid{grid-template-columns:1fr 1fr;overflow-y:auto;gap:12px}
+  .exp-large{gap:8px}
   .exp-small{grid-template-columns:1fr}
   .p3-projects{grid-template-columns:1fr}
-  .p3-resp{grid-template-columns:1fr 1fr}
+  .p3-resp{grid-template-columns:repeat(2,1fr)}
   .resp-arrow{display:none}
-  .p4-body{grid-template-columns:1fr}
-  .p5-cols{grid-template-columns:1fr}
-  .photo-mosaic,.deans-badges{display:none}
+  .p4-skills-row{grid-template-columns:1fr}
+  .p5-cols{grid-template-columns:1fr 1fr 180px}
+  .deans-badges{display:none}
   .p6-body{grid-template-columns:1fr}
+  .p6-inner{padding:24px 20px 16px;gap:16px}
+}
+
+/* ─── MOBILE (≤ 600px) ─── */
+@media(max-width:600px){
+  html{font-size:13px}
+  #scroller{scroll-snap-type:y proximity}
+  .page{height:auto;min-height:100vh}
+  #side-dots{display:none}
+  .p1-inner{grid-template-columns:1fr;padding:18px 16px 14px}
+  .p1-name{font-size:22px}
+  .p1-bio{font-size:12px}
+  .p1-certs{display:none}
+  .p1-card{display:none}
+  .p2-inner{padding:16px}
+  .edu-grid{grid-template-columns:1fr;gap:10px;overflow-y:visible}
+  .edu-cgpa{font-size:18px}
+  .p3-inner{padding:16px;gap:8px}
+  .exp-card{padding:12px 14px}
+  .exp-meta{gap:8px}
+  .p3-projects{grid-template-columns:1fr}
+  .p3-resp{grid-template-columns:1fr 1fr;gap:6px}
+  .resp-icon{font-size:14px}
+  .resp-title{font-size:11px}
+  .resp-desc{display:none}
+  .p4-inner{padding:16px}
+  .p4-skills-row{grid-template-columns:1fr;gap:10px}
+  .academic-grid{grid-template-columns:1fr 1fr}
+  .p5-inner{padding:16px;gap:8px}
+  .deans-banner{padding:10px 14px;gap:10px}
+  .deans-icon{font-size:24px}
+  .deans-badges{display:none}
+  .p5-cols{grid-template-columns:1fr 1fr;gap:10px}
+  .p5-photo-col{grid-column:span 2;height:160px}
+  .p5-photo-col .photo-mosaic{grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;height:100%}
+  .p5-photo-col .photo-mosaic{flex:none;display:grid}
+  .p6-inner{padding:16px;gap:12px}
+  .p6-body{grid-template-columns:1fr;gap:14px}
+  .ref-cards{flex-direction:column}
+  .page-heading{margin-bottom:14px}
+  .page-heading h1{font-size:18px}
+}
+
+/* ─── SMALL MOBILE (≤ 380px) ─── */
+@media(max-width:380px){
+  .p1-name{font-size:18px}
+  .page-heading h1{font-size:16px}
+  .edu-card{padding:14px}
+  .p3-resp{grid-template-columns:1fr}
+  .academic-grid{grid-template-columns:1fr}
+  .p5-photo-col{height:140px}
+  .p5-photo-col .photo-mosaic{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(3,1fr)}
 }
 </style>
 </head>
@@ -251,7 +318,19 @@ body{font-family:'Times New Roman',Times,serif;font-size:12px;overflow:hidden;ba
     <li><a href="#" onclick="goTo(4);return false" data-i="4">Involvement</a></li>
     <li><a href="#" onclick="goTo(5);return false" data-i="5">Contact</a></li>
   </ul>
+  <button id="hamburger" aria-label="Menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<!-- MOBILE MENU -->
+<div id="mobile-menu">
+  <a href="#" onclick="mobileGoTo(0)">Introduction</a>
+  <a href="#" onclick="mobileGoTo(1)">Education</a>
+  <a href="#" onclick="mobileGoTo(2)">Experience</a>
+  <a href="#" onclick="mobileGoTo(3)">Skills</a>
+  <a href="#" onclick="mobileGoTo(4)">Involvement</a>
+  <a href="#" onclick="mobileGoTo(5)">Contact</a>
+</div>
 
 <!-- SIDE DOTS -->
 <div id="side-dots">
@@ -657,6 +736,26 @@ scroller.addEventListener('touchend',   e => {
 }, { passive: true });
 
 sync(0);
+
+// Hamburger menu
+function toggleMenu() {
+  const btn  = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+function mobileGoTo(i) {
+  toggleMenu();
+  setTimeout(() => goTo(i), 200);
+}
+
+// Close mobile menu on resize to desktop
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 900) {
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('mobile-menu').classList.remove('open');
+  }
+});
 </script>
 </body>
 </html>
