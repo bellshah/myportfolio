@@ -1,5 +1,12 @@
 .DS_Store
 Thumbs.db
 *.pdf
+!public/resume/nabilah-resume.pdf
 documents/
 assets/
+node_modules/
+.next/
+out/
+.env
+.env.local
+*.tsbuildinfo
