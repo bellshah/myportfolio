@@ -59,7 +59,7 @@ export const personal = {
   github:    '',
   available: 'August 2026',
   openTo:    ['Selangor', 'Kuala Lumpur', 'Pahang', 'Remote'],
-  resumeUrl: '/resume/RESUME%20NABILAH.pdf',
+  resumeUrl: '/resume/nabilah-resume.pdf',
 }
 
 export const education: Education[] = [
