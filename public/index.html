@@ -251,13 +251,16 @@ body{font-family:'Times New Roman',Times,serif;font-size:12px;overflow:hidden;ba
   .deans-badges{display:none}
   .p6-body{grid-template-columns:1fr}
   .p6-inner{padding:24px 20px 16px;gap:16px}
+  .page{height:auto;min-height:100vh;overflow:visible}
+  #scroller{scroll-snap-type:y proximity}
+  .skills-col{overflow-y:visible}
 }
 
 /* ─── MOBILE (≤ 600px) ─── */
 @media(max-width:600px){
   html{font-size:13px}
   #scroller{scroll-snap-type:y proximity}
-  .page{height:auto;min-height:100vh}
+  .page{height:auto;min-height:100vh;overflow:visible}
   #side-dots{display:none}
   .p1-inner{grid-template-columns:1fr;padding:18px 16px 14px}
   .p1-name{font-size:22px}
@@ -283,8 +286,8 @@ body{font-family:'Times New Roman',Times,serif;font-size:12px;overflow:hidden;ba
   .deans-icon{font-size:24px}
   .deans-badges{display:none}
   .p5-cols{grid-template-columns:1fr 1fr;gap:10px}
-  .p5-photo-col{grid-column:span 2;height:160px}
-  .p5-photo-col .photo-mosaic{grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;height:100%}
+  .p5-photo-col{grid-column:span 2;height:auto}
+  .p5-photo-col .photo-mosaic{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,110px);height:auto}
   .p5-photo-col .photo-mosaic{flex:none;display:grid}
   .p6-inner{padding:16px;gap:12px}
   .p6-body{grid-template-columns:1fr;gap:14px}
@@ -300,8 +303,8 @@ body{font-family:'Times New Roman',Times,serif;font-size:12px;overflow:hidden;ba
   .edu-card{padding:14px}
   .p3-resp{grid-template-columns:1fr}
   .academic-grid{grid-template-columns:1fr}
-  .p5-photo-col{height:140px}
-  .p5-photo-col .photo-mosaic{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(3,1fr)}
+  .p5-photo-col{height:auto}
+  .p5-photo-col .photo-mosaic{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(3,90px)}
 }
 </style>
 </head>
@@ -356,7 +359,7 @@ body{font-family:'Times New Roman',Times,serif;font-size:12px;overflow:hidden;ba
     </div>
     <h1 class="p1-name">Nabilah<br><span class="italic">binti</span> Mohammad<br>Shahidan</h1>
     <div class="p1-role">Software Engineering Graduate · UMPSA · Class of 2026</div>
-    <p class="p1-bio">UMPSA qualification: Diploma in Computer Science and Bachelor of Computer Science (Software Engineering) with Hons at the same institution. Currently serving as AI &amp; Digitalization Intern at TNB Renewables Sdn. Bhd., where I independently developed and deployed a production web system automating while handling and supporting operational tasks assigned across multiple departments by my supervisor..</p>
+    <p class="p1-bio">UMPSA qualification: Diploma in Computer Science and Bachelor of Computer Science (Software Engineering) with Hons at the same institution. Currently serving as AI &amp; Digitalization Intern at TNB Renewables Sdn. Bhd., where I independently developed and deployed a production web system automating while handling and supporting operational tasks assigned across multiple departments by my supervisor.</p>
     <div class="p1-certs">
       <div class="cert-badge"><div class="dot-c" style="background:#4CAF50"></div>ISC2 Certified in Cybersecurity</div>
       <div class="cert-badge"><div class="dot-c" style="background:#F59E0B"></div>Anthropic Claude API &amp; Agent Skills</div>
@@ -367,7 +370,7 @@ body{font-family:'Times New Roman',Times,serif;font-size:12px;overflow:hidden;ba
     <div class="otw">
       <div class="otw-pulse"></div>
       <span class="otw-text">Open to Work</span>
-      <span class="otw-sub">Available from August 2026</span>
+      <span class="otw-sub">Available on August 2026</span>
     </div>
   </div>
   <div class="p1-card">
@@ -403,8 +406,8 @@ body{font-family:'Times New Roman',Times,serif;font-size:12px;overflow:hidden;ba
         <div class="edu-inst">Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)</div>
       </div>
       <div class="edu-meta">
-        <div><div class="edu-cgpa">3.31</div><div class="edu-cgpa-lbl">CGPA / 4.00</div></div>
-        <div class="edu-period">2023 – 2026<br>109 Credits</div>
+        <div><div class="edu-cgpa">CGPA</div><div class="edu-cgpa-lbl">3.31 / 4.00</div></div>
+        <div class="edu-period">Oct 2023 – Aug 2026</div>
       </div>
       <div class="edu-honours">
         <span class="honour-chip">Dean's List Semester 5 (GPA 3.92)</span>
@@ -420,7 +423,7 @@ body{font-family:'Times New Roman',Times,serif;font-size:12px;overflow:hidden;ba
         <div class="edu-inst">Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)</div>
       </div>
       <div class="edu-meta">
-        <div><div class="edu-cgpa">3.26</div><div class="edu-cgpa-lbl">CGPA / 4.00</div></div>
+        <div><div class="edu-cgpa">CGPA</div><div class="edu-cgpa-lbl">3.26 / 4.00</div></div>
         <div class="edu-period">Aug 2021 – Aug 2023<br>MUET Band 3.5</div>
       </div>
       <div class="edu-honours">
@@ -585,7 +588,8 @@ body{font-family:'Times New Roman',Times,serif;font-size:12px;overflow:hidden;ba
     <div class="deans-icon">🏆</div>
     <div class="deans-text">
       <h3>Dean's List Award × 2</h3>
-      <p>Diploma Semester 1 (GPA 3.60) &amp; Degree Semester 5 (GPA 3.92), UMPSA Faculty of Computing</p>
+      <p>Diploma Semester 1 (GPA 3.60), UMPSA Faculty of Computing</p>
+      <p>Degree Semester 5 (GPA 3.92), UMPSA Faculty of Computing</p>
     </div>
     <div class="deans-badges">
       <span class="deans-badge">Diploma Sem 1 · GPA 3.60</span>
@@ -713,12 +717,12 @@ function sync(i) {
 // IntersectionObserver keeps indicators in sync when scrolling freely
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if (e.isIntersecting && e.intersectionRatio >= 0.5) {
+    if (e.isIntersecting && e.intersectionRatio >= 0.1) {
       current = pages.indexOf(e.target);
       sync(current);
     }
   });
-}, { threshold: 0.5, root: scroller });
+}, { threshold: [0.1, 0.3], root: scroller });
 pages.forEach(p => io.observe(p));
 
 // Keyboard
@@ -731,6 +735,7 @@ document.addEventListener('keydown', e => {
 let ty0 = 0;
 scroller.addEventListener('touchstart', e => { ty0 = e.touches[0].clientY; }, { passive: true });
 scroller.addEventListener('touchend',   e => {
+  if (window.innerWidth <= 900) return;
   const dy = ty0 - e.changedTouches[0].clientY;
   if (Math.abs(dy) > 48) dy > 0 ? goTo(current + 1) : goTo(current - 1);
 }, { passive: true });
