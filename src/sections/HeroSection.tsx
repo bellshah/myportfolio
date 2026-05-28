@@ -59,10 +59,11 @@ export function HeroSection() {
               </a>
               <a
                 href={personal.resumeUrl}
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 border-2 border-c-navy dark:border-white text-c-navy dark:text-white font-medium rounded-lg transition-all duration-200 hover:bg-c-navy hover:text-white dark:hover:bg-white dark:hover:text-slate-900 hover:-translate-y-0.5 text-sm"
               >
-                Download Resume
+                View Resume
               </a>
               <a href="#contact" className="inline-flex items-center justify-center px-4 py-3 text-c-navy dark:text-slate-300 font-medium rounded-lg transition-all duration-200 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm">
                 Contact Me

@@ -47,7 +47,7 @@ export interface Education {
 }
 
 export const personal = {
-  name:      'Nabilah binti Mohammad Shahidan',
+  name:      'Nabilah Binti Mohammad Shahidan',
   shortName: 'Nabilah Shahidan',
   role:      'Software Engineering Graduate',
   tagline:   'Class of 2026 · UMPSA',
@@ -59,7 +59,7 @@ export const personal = {
   github:    '',
   available: 'August 2026',
   openTo:    ['Selangor', 'Kuala Lumpur', 'Pahang', 'Remote'],
-  resumeUrl: '/resume/nabilah-resume.pdf',
+  resumeUrl: '/portfolio_slides.html',
 }
 
 export const education: Education[] = [

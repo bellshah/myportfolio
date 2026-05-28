@@ -64,23 +64,17 @@ export function ResumeSection() {
             </a>
             <a
               href={personal.resumeUrl}
-              download="Nabilah-Shahidan-Resume-2026.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-c-coral hover:bg-c-coral2 text-white font-medium rounded-lg transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 text-sm"
             >
               <Download size={16} />
-              Download PDF
+              Save as PDF
             </a>
           </motion.div>
 
           <motion.p variants={fadeInUp} className="mt-5 text-xs text-c-dim dark:text-slate-500">
-            Also available:{' '}
-            <a
-              href="/portfolio_slides.html"
-              target="_blank"
-              className="text-c-coral dark:text-indigo-400 hover:underline"
-            >
-              Print-ready 10-slide A4 portfolio
-            </a>
+            Opens the 10-slide portfolio · use the <span className="font-medium">Print / Save as PDF</span> button on that page to download
           </motion.p>
 
         </motion.div>

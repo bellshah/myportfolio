@@ -187,7 +187,7 @@ export function ContactSection() {
             className="mt-16 pt-8 border-t border-slate-200/60 dark:border-slate-700/60 text-center space-y-1"
           >
             <p className="font-mono text-xs text-c-dim dark:text-slate-500">
-              © 2026 Nabilah binti Mohammad Shahidan · Klang, Selangor, Malaysia
+              © 2026 Nabilah Binti Mohammad Shahidan · Klang, Selangor, Malaysia
             </p>
             <p className="font-mono text-xs text-c-dim dark:text-slate-500">
               Software Engineering Graduate Portfolio · V2.0
