@@ -56,7 +56,7 @@ export const personal = {
   email:     'nanabellashah03@gmail.com',
   phone:     '+6010-9648871',
   linkedin:  'https://linkedin.com/in/nabilahshahidan',
-  github:    '',
+  github:    'https://github.com/bellshah',
   available: 'August 2026',
   openTo:    ['Selangor', 'Kuala Lumpur', 'Pahang', 'Remote'],
   resumeUrl: '/resume/nabilah-resume.pdf',

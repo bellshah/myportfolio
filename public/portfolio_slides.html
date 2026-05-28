@@ -179,19 +179,32 @@ body{font-family:'Inter',sans-serif;overflow:hidden;background:var(--navy)}
    PAGE 6 — CONTACT
 ════════════════════════════ */
 #p6{background:var(--navy);padding-top:52px}
-.p6-inner{flex:1;max-width:640px;margin:0 auto;width:100%;padding:0 40px 40px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:36px}
-.p6-heading{font-family:'Playfair Display',serif;font-size:clamp(30px,4.5vw,54px);font-weight:900;color:var(--white);line-height:1.08}
+.p6-inner{flex:1;max-width:1100px;margin:0 auto;width:100%;padding:38px 44px 28px;display:flex;flex-direction:column;gap:24px}
+.p6-top{text-align:center}
+.p6-heading{font-family:'Playfair Display',serif;font-size:clamp(28px,3.8vw,48px);font-weight:900;color:var(--white);line-height:1.08}
 .p6-heading span{color:var(--coral);font-style:italic}
-.p6-sub{font-size:13.5px;color:rgba(255,255,255,.52);max-width:400px;line-height:1.72}
-.contact-links{display:flex;flex-direction:column;gap:10px;width:100%}
-.contact-link{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);text-decoration:none;transition:all .22s}
+.p6-sub{font-size:13px;color:rgba(255,255,255,.5);line-height:1.72;margin-top:8px}
+.p6-body{display:grid;grid-template-columns:1fr 1fr;gap:28px;flex:1}
+.contact-links{display:flex;flex-direction:column;gap:9px}
+.contact-link{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);text-decoration:none;transition:all .22s}
 .contact-link:hover{background:rgba(255,255,255,.09);border-color:rgba(200,71,46,.45);transform:translateX(5px)}
 .contact-link:hover .c-arrow{transform:translateX(5px)}
-.cl-left{display:flex;align-items:center;gap:12px}
-.cl-icon{font-size:17px}
+.cl-left{display:flex;align-items:center;gap:11px}
+.cl-icon{font-size:16px}
 .cl-lbl{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--dim)}
-.cl-val{font-size:12.5px;color:var(--white);font-weight:500;margin-top:1px}
-.c-arrow{font-size:17px;color:var(--coral);transition:transform .22s}
+.cl-val{font-size:12px;color:var(--white);font-weight:500;margin-top:1px}
+.c-arrow{font-size:16px;color:var(--coral);transition:transform .22s}
+.p6-refs-title{font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:10px}
+.ref-cards{display:flex;flex-direction:column;gap:10px}
+.ref-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:14px 16px}
+.ref-name{font-family:'Playfair Display',serif;font-size:13.5px;font-weight:700;color:var(--white);margin-bottom:2px}
+.ref-role{font-size:10.5px;color:var(--coral);font-weight:600;margin-bottom:6px}
+.ref-inst{font-size:10px;color:rgba(255,255,255,.55);margin-bottom:8px;line-height:1.5}
+.ref-contacts{display:flex;flex-direction:column;gap:3px}
+.ref-contact{display:flex;align-items:center;gap:7px;font-size:10.5px;color:rgba(255,255,255,.65)}
+.ref-contact a{color:rgba(255,255,255,.65);text-decoration:none;transition:color .2s}
+.ref-contact a:hover{color:var(--coral)}
+.ref-contact-icon{font-size:11px;flex-shrink:0}
 .p6-footer{font-family:'Space Mono',monospace;font-size:9.5px;color:rgba(255,255,255,.22);text-align:center;line-height:1.8}
 
 /* ─── RESPONSIVE ─── */
@@ -209,6 +222,7 @@ body{font-family:'Inter',sans-serif;overflow:hidden;background:var(--navy)}
   .p4-body{grid-template-columns:1fr}
   .p5-cols{grid-template-columns:1fr}
   .photo-mosaic,.deans-badges{display:none}
+  .p6-body{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -502,28 +516,56 @@ body{font-family:'Inter',sans-serif;overflow:hidden;background:var(--navy)}
 ══════════════════════════════════ -->
 <section class="page" id="p6">
 <div class="p6-inner">
-  <div>
+  <div class="p6-top">
     <p style="font-family:'Space Mono',monospace;font-size:10px;color:var(--coral);text-transform:uppercase;letter-spacing:.13em;margin-bottom:8px">Let's Connect</p>
     <h2 class="p6-heading">Contact <span>Me!</span></h2>
-    <p class="p6-sub" style="margin-top:12px">Open to full-time Software Engineer, Software Developer, and System Analyst roles in Malaysia. Available from August 2026.</p>
+    <p class="p6-sub">Open to full-time Software Engineer, Software Developer, and System Analyst roles in Malaysia. Available from August 2026.</p>
   </div>
-  <div class="contact-links">
-    <a href="mailto:nanabellashah03@gmail.com" class="contact-link">
-      <div class="cl-left"><span class="cl-icon">✉️</span><div><div class="cl-lbl">Email</div><div class="cl-val">nanabellashah03@gmail.com</div></div></div>
-      <span class="c-arrow">→</span>
-    </a>
-    <a href="tel:+60109648871" class="contact-link">
-      <div class="cl-left"><span class="cl-icon">📱</span><div><div class="cl-lbl">Phone</div><div class="cl-val">010-9648871</div></div></div>
-      <span class="c-arrow">→</span>
-    </a>
-    <a href="https://linkedin.com/in/nabilahshahidan" target="_blank" rel="noopener noreferrer" class="contact-link">
-      <div class="cl-left"><span class="cl-icon">💼</span><div><div class="cl-lbl">LinkedIn</div><div class="cl-val">linkedin.com/in/nabilahshahidan</div></div></div>
-      <span class="c-arrow">→</span>
-    </a>
-    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="contact-link">
-      <div class="cl-left"><span class="cl-icon">💻</span><div><div class="cl-lbl">GitHub</div><div class="cl-val">github.com/[your-username]</div></div></div>
-      <span class="c-arrow">→</span>
-    </a>
+  <div class="p6-body">
+    <div>
+      <div class="p6-refs-title" style="color:rgba(255,255,255,.35);margin-bottom:10px">Get in Touch</div>
+      <div class="contact-links">
+        <a href="mailto:nanabellashah03@gmail.com" class="contact-link">
+          <div class="cl-left"><span class="cl-icon">✉️</span><div><div class="cl-lbl">Email</div><div class="cl-val">nanabellashah03@gmail.com</div></div></div>
+          <span class="c-arrow">→</span>
+        </a>
+        <a href="tel:+60109648871" class="contact-link">
+          <div class="cl-left"><span class="cl-icon">📱</span><div><div class="cl-lbl">Phone</div><div class="cl-val">010-9648871</div></div></div>
+          <span class="c-arrow">→</span>
+        </a>
+        <a href="https://linkedin.com/in/nabilahshahidan" target="_blank" rel="noopener noreferrer" class="contact-link">
+          <div class="cl-left"><span class="cl-icon">💼</span><div><div class="cl-lbl">LinkedIn</div><div class="cl-val">linkedin.com/in/nabilahshahidan</div></div></div>
+          <span class="c-arrow">→</span>
+        </a>
+        <a href="https://github.com/bellshah" target="_blank" rel="noopener noreferrer" class="contact-link">
+          <div class="cl-left"><span class="cl-icon">💻</span><div><div class="cl-lbl">GitHub</div><div class="cl-val">github.com/bellshah</div></div></div>
+          <span class="c-arrow">→</span>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="p6-refs-title">References</div>
+      <div class="ref-cards">
+        <div class="ref-card">
+          <div class="ref-name">Ts. Azlina Zainuddin</div>
+          <div class="ref-role">Lecturer / Academic Advisor</div>
+          <div class="ref-inst">Faculty of Computing<br>Universiti Malaysia Pahang Al-Sultan Abdullah</div>
+          <div class="ref-contacts">
+            <div class="ref-contact"><span class="ref-contact-icon">📞</span><a href="tel:+60943155548">09-4315548</a></div>
+            <div class="ref-contact"><span class="ref-contact-icon">✉️</span><a href="mailto:azlinaz@umpsa.edu.my">azlinaz@umpsa.edu.my</a></div>
+          </div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-name">Ts. Dr. Nabilah Filzah Mohd Radhuan</div>
+          <div class="ref-role">Senior Lecturer</div>
+          <div class="ref-inst">Faculty of Computing<br>Universiti Malaysia Pahang Al-Sultan Abdullah</div>
+          <div class="ref-contacts">
+            <div class="ref-contact"><span class="ref-contact-icon">📞</span><a href="tel:+60943155581">09-4315581</a></div>
+            <div class="ref-contact"><span class="ref-contact-icon">✉️</span><a href="mailto:nabilahfilzah@umpsa.edu.my">nabilahfilzah@umpsa.edu.my</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="p6-footer">
     © 2026 Nabilah Binti Mohammad Shahidan · Klang, Selangor, Malaysia<br>
