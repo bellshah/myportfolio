@@ -129,6 +129,14 @@
     .page-title em { color:var(--mint); font-family:var(--serif-italic); font-style:italic; font-weight:400; }
     .page-line { flex:1; height:1px; background:var(--border2); margin-bottom:5px; }
 
+    /* SECTION PHOTO BACKGROUND */
+    .photo-bg {
+      position:absolute; inset:0; pointer-events:none;
+      background-size:cover; background-position:center top; background-repeat:no-repeat;
+      opacity:0.22; z-index:0;
+    }
+    /* Portrait images: scale to full height, no horizontal stretch */
+
     /* SCROLL HINT */
     .scroll-hint {
       position:absolute; bottom:24px; left:50%;
@@ -380,7 +388,6 @@
     ═══════════════════════════════════════════════ */
     #p3 {
       background-color:var(--bg2);
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M0 24L24 0' stroke='%235EEAD4' stroke-opacity='0.035' stroke-width='1'/%3E%3C/svg%3E");
     }
     .p3-glow {
       position:absolute; pointer-events:none; z-index:0;
@@ -688,7 +695,7 @@
     ═══════════════════════════════════════════════ */
     #p6 {
       background:var(--bg);
-      display:flex; justify-content:center; align-items:center;
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
     }
     .p6-bg {
       position:absolute; inset:0; pointer-events:none;
@@ -697,10 +704,13 @@
         radial-gradient(ellipse 40% 50% at 80% 50%, rgba(34,211,238,0.03) 0%, transparent 60%);
     }
     .p6-inner {
-      position:relative; z-index:2;
-      display:grid; grid-template-columns:1fr 1fr;
-      width:100%;
-      padding:80px 72px 0; gap:72px; align-items:center;
+      display:flex; flex-direction:column;
+      padding:80px 72px 40px;
+      position:relative; z-index:2; width:100%;
+    }
+    .p6-body {
+      display:grid; grid-template-columns:1.4fr 1fr;
+      gap:56px; align-items:start; flex:1;
     }
     .p6-eyebrow {
       font-family:var(--mono); font-size:0.66rem;
@@ -736,6 +746,7 @@
       width:6px; height:6px; border-radius:50%;
       background:var(--mint); animation:blink 1.5s infinite; flex-shrink:0;
     }
+    .p6-right { display:flex; flex-direction:column; gap:12px; }
     .contact-list { display:flex; flex-direction:column; }
     .contact-item {
       display:flex; justify-content:space-between; align-items:center;
@@ -763,6 +774,33 @@
       font-family:var(--serif); font-size:0.88rem; font-style:italic;
       color:var(--warm3); text-align:center; opacity:0.42; white-space:nowrap;
     }
+
+    /* References column */
+    .p6-refs-label {
+      font-family:var(--mono); font-size:0.66rem;
+      color:var(--mint); text-transform:uppercase; letter-spacing:0.2em;
+      margin-bottom:12px;
+      display:flex; align-items:center; gap:10px;
+    }
+    .p6-refs-label::before {
+      content:''; display:block; width:20px; height:1px; background:var(--mint);
+    }
+    .ref-card {
+      background:var(--bg3); border:1px solid var(--border2);
+      border-radius:var(--r-md); padding:14px 18px;
+    }
+    .ref-name { font-size:0.86rem; font-weight:600; color:var(--warm); margin-bottom:2px; }
+    .ref-role {
+      font-size:0.68rem; color:var(--mint); font-family:var(--mono);
+      text-transform:uppercase; letter-spacing:0.08em; margin-bottom:5px;
+    }
+    .ref-inst { font-size:0.72rem; color:var(--warm3); line-height:1.45; margin-bottom:9px; }
+    .ref-contacts { display:flex; flex-direction:column; gap:4px; }
+    .ref-contact {
+      font-family:var(--mono); font-size:0.67rem; color:var(--warm3);
+      display:flex; align-items:center; gap:5px; transition:color 0.2s;
+    }
+    .ref-contact:hover { color:var(--mint); }
 
     /* ═══════════════════════════════════════════════
        HAMBURGER BUTTON (hidden on desktop)
@@ -832,7 +870,8 @@
       .p3-inner,
       .p4-inner,
       .p5-inner { padding-left:48px; padding-right:48px; }
-      .p6-inner { padding:80px 48px 0; gap:48px; }
+      .p6-inner { padding:80px 48px 40px; }
+      .p6-body  { gap:36px; }
     }
 
     /* ═══════════════════════════════════════════════
@@ -909,8 +948,8 @@
       .photo-mosaic { height:200px; }
 
       /* P6 */
-      .p6-heading { font-size:clamp(36px,8vw,56px); }
-      .p6-sub { max-width:100%; }
+      .p6-body  { grid-template-columns:1fr; gap:24px; }
+      .p6-sub   { max-width:100%; }
       .p6-quote { position:static; transform:none; margin-top:24px; white-space:normal; text-align:center; padding:0 20px 32px; }
     }
 
@@ -928,7 +967,8 @@
       .p3-inner,
       .p4-inner,
       .p5-inner { padding:72px 16px 32px; }
-      .p6-inner { padding:72px 16px 48px; gap:24px; }
+      .p6-inner { padding:72px 16px 40px; }
+      .p6-body  { gap:20px; }
 
       /* P1 */
       .p1-name { font-size:clamp(38px,10vw,60px); }
@@ -1003,6 +1043,7 @@
 
     <!-- ══════════════════════════════ PAGE 1: INTRODUCTION -->
     <section class="slide" id="p1">
+      <div class="photo-bg" style="background-image:url('assets/myself.jpg')" aria-hidden="true"></div>
       <div class="p1-noise"  aria-hidden="true"></div>
       <div class="p1-glow1" aria-hidden="true"></div>
       <div class="p1-glow2" aria-hidden="true"></div>
@@ -1015,9 +1056,10 @@
           <p class="p1-role">Bachelor of Computer Science (Software Engineering) with Hons · UMPSA</p>
           <p class="p1-bio">
             Final-year <strong>Software Engineering</strong> student at UMPSA, currently completing a
-            <strong>6-month internship</strong> at TNB Renewables Sdn. Bhd. as an AI &amp; Digitalization
-            Intern. I build and ship <strong>full-stack web systems</strong>, write tests, gather user
-            feedback, and iterate — end to end.
+            <strong>6-month internship</strong> as an <strong>AI &amp; Digitalization Intern</strong> at
+            TNB Renewables Sdn. Bhd. Passionate about <strong>full-stack development</strong>, software
+            engineering, and digital solutions. Seeking <strong>Software Engineer Fresh Graduate</strong>
+            or <strong>PROTÉGÉ</strong> opportunities upon internship completion.
           </p>
           <div class="p1-certs">
             <div class="p1-cert-row">
@@ -1026,7 +1068,7 @@
             </div>
             <div class="p1-cert-row">
               <span class="cert-ico ci-anth">🤖</span>
-              <span class="cert-name">Anthropic Education: Introduction to agent skills · AI Fluency for students · Claude with Anthropic API</span>
+              <span class="cert-name">Anthropic Education: Claude with Anthropic API</span>
             </div>
             <div class="p1-cert-row">
               <span class="cert-ico ci-aws">☁️</span>
@@ -1034,11 +1076,11 @@
             </div>
             <div class="p1-cert-row">
               <span class="cert-ico ci-ms">🛡️</span>
-              <span class="cert-name">Microsoft Certified: Security, Compliance &amp; Identity</span>
+              <span class="cert-name">Microsoft Certified: Security, Compliance, and Identity Fundamentals</span>
             </div>
             <div class="p1-cert-row">
               <span class="cert-ico ci-cisco">🌐</span>
-              <span class="cert-name">Certificate of Course Completion — Cisco Networking Academy</span>
+              <span class="cert-name">CCNAv7: Introduction to Networks — Cisco Networking Academy</span>
             </div>
           </div>
         </div>
@@ -1079,6 +1121,7 @@
 
     <!-- ══════════════════════════════ PAGE 2: EDUCATION -->
     <section class="slide" id="p2">
+      <div class="photo-bg" style="background-image:url('assets/umpsa.jpeg')" aria-hidden="true"></div>
       <div class="p2-glow" aria-hidden="true"></div>
       <div class="p2-inner">
         <div class="page-header">
@@ -1100,8 +1143,7 @@
               </div>
             </div>
             <div class="edu-badges">
-              <span class="mat-badge gold">Dean's List Sem 1</span>
-              <span class="mat-badge">GPA 3.92 (Sem 5)</span>
+              <span class="mat-badge gold">Dean's List GPA 3.92 (Sem 5)</span>
               <span class="mat-badge">Second Class (Upper)</span>
             </div>
           </div>
@@ -1122,8 +1164,7 @@
               </div>
             </div>
             <div class="edu-badges">
-              <span class="mat-badge gold">Dean's List Sem 1</span>
-              <span class="mat-badge">GPA 3.60 (Sem 1)</span>
+              <span class="mat-badge gold">Dean's List GPA 3.60 (Sem 1)</span>
               <span class="mat-badge">Second Class</span>
             </div>
           </div>
@@ -1148,21 +1189,21 @@
               <div class="cert-item">
                 <span class="cert-item-ico">🤖</span>
                 <div class="cert-item-body">
-                  <span class="cert-item-name">Introduction to agent skills · AI Fluency for students · Claude with Anthropic API</span>
+                  <span class="cert-item-name">Claude with Anthropic API</span>
                   <span class="cert-item-issuer">Anthropic Education · 2026</span>
                 </div>
               </div>
               <div class="cert-item">
                 <span class="cert-item-ico">🛡️</span>
                 <div class="cert-item-body">
-                  <span class="cert-item-name">Security, Compliance and Identity Fundamentals</span>
+                  <span class="cert-item-name">Security, Compliance, and Identity Fundamentals</span>
                   <span class="cert-item-issuer">Microsoft Certified · 2025</span>
                 </div>
               </div>
               <div class="cert-item">
                 <span class="cert-item-ico">🌐</span>
                 <div class="cert-item-body">
-                  <span class="cert-item-name">Course Completion Certificate</span>
+                  <span class="cert-item-name">CCNAv7: Introduction to Networks</span>
                   <span class="cert-item-issuer">Cisco Networking Academy</span>
                 </div>
               </div>
@@ -1174,6 +1215,7 @@
 
     <!-- ══════════════════════════════ PAGE 3: WORK EXPERIENCE -->
     <section class="slide" id="p3">
+      <div class="photo-bg" style="background-image:url('assets/work.jpg')" aria-hidden="true"></div>
       <div class="p3-glow" aria-hidden="true"></div>
       <div class="p3-inner">
         <div class="page-header">
@@ -1341,6 +1383,7 @@
 
     <!-- ══════════════════════════════ PAGE 4: SKILLS -->
     <section class="slide" id="p4">
+      <div class="photo-bg" style="background-image:url('assets/skills.jpg')" aria-hidden="true"></div>
       <div class="p4-glow" aria-hidden="true"></div>
       <div class="p4-inner">
         <div class="page-header">
@@ -1467,6 +1510,7 @@
 
     <!-- ══════════════════════════════ PAGE 5: OTHER INVOLVEMENT -->
     <section class="slide" id="p5">
+      <div class="photo-bg" style="background-image:url('assets/event.jpg')" aria-hidden="true"></div>
       <div class="p5-glow" aria-hidden="true"></div>
       <div class="p5-inner">
         <div class="page-header">
@@ -1480,8 +1524,8 @@
           <!-- Left: Dean's List + Participant events -->
           <div class="inv-left">
             <div class="dean-feature">
-              <div class="df-gpa">★</div>
               <div class="df-pre">🏅 Academic Excellence</div>
+              <div class="df-gpa">★</div>
               <div class="df-title">Dean's <em>List</em></div>
               <div class="df-detail">Degree · Semester 5 · Academic Session 2025/2026 · UMPSA Faculty of Computing</div>
               <div class="df-detail">Diploma · Semester 1 · Academic Session 2021/2022 · UMPSA Faculty of Computing</div>
@@ -1578,7 +1622,7 @@
             <div class="event-card">
               <span class="event-ico">🎯</span>
               <div class="event-info">
-                <span class="event-type organizer">Organiser</span>
+                <span class="event-type organizer">Organizer</span>
                 <span class="event-name">UMPSA PEKA 5 — Escape Resident</span>
                 <span class="event-date">May 2024</span>
               </div>
@@ -1586,7 +1630,7 @@
             <div class="event-card">
               <span class="event-ico">🏃</span>
               <div class="event-info">
-                <span class="event-type organizer">Organiser</span>
+                <span class="event-type organizer">Organizer</span>
                 <span class="event-name">UMPSA PEKA 5 — Color Run</span>
                 <span class="event-date">May 2024</span>
               </div>
@@ -1594,7 +1638,7 @@
             <div class="event-card">
               <span class="event-ico">🌙</span>
               <div class="event-info">
-                <span class="event-type organizer">Organiser</span>
+                <span class="event-type organizer">Organizer</span>
                 <span class="event-name">UMPSA PEKA 5 — Riang Ria Raya</span>
                 <span class="event-date">May 2024</span>
               </div>
@@ -1606,64 +1650,95 @@
 
     <!-- ══════════════════════════════ PAGE 6: CONTACT -->
     <section class="slide" id="p6">
+      <div class="photo-bg" style="background-image:url('assets/contact.jpg')" aria-hidden="true"></div>
       <div class="p6-bg" aria-hidden="true"></div>
       <div class="p6-inner">
-        <div class="p6-left">
-          <p class="p6-eyebrow">Get in touch</p>
-          <h2 class="p6-heading">Contact<em>Me!</em></h2>
-          <p class="p6-sub">
-            I'm a <strong>Software Engineer</strong> open to full-time roles, collaborations, and
-            interesting projects starting <strong>August 2026</strong>.
-          </p>
-          <div class="p6-open">
-            <span class="p6-open-dot"></span>
-            Open to Work · Available Aug 2026
-          </div>
+
+        <div class="page-header">
+          <span class="page-num">06</span>
+          <h2 class="page-title">Contact <em>Me!</em></h2>
+          <div class="page-line"></div>
         </div>
 
-        <div class="p6-right">
-          <div class="contact-list">
-            <a href="mailto:nanabellashah03@gmail.com" class="contact-item">
-              <div class="ci-left">
-                <div class="ci-icon">📧</div>
-                <div>
-                  <div class="ci-label">Email</div>
-                  <div class="ci-handle">nanabellashah03@gmail.com</div>
+        <div class="p6-body">
+
+          <!-- LEFT: description + contact links -->
+          <div class="p6-left">
+            <p class="p6-sub">
+              I'm a <strong>Software Engineer</strong> open to full-time roles, collaborations, and
+              interesting projects starting <strong>August 2026</strong>.
+            </p>
+            <div class="p6-open" style="margin-bottom:24px;">
+              <span class="p6-open-dot"></span>
+              Open to Work · Available Aug 2026
+            </div>
+            <div class="contact-list">
+              <a href="mailto:nanabellashah03@gmail.com" class="contact-item">
+                <div class="ci-left">
+                  <div class="ci-icon">📧</div>
+                  <div>
+                    <div class="ci-label">Email</div>
+                    <div class="ci-handle">nanabellashah03@gmail.com</div>
+                  </div>
                 </div>
-              </div>
-              <span class="ci-arrow">↗</span>
-            </a>
-            <a href="tel:+60109648871" class="contact-item">
-              <div class="ci-left">
-                <div class="ci-icon">📞</div>
-                <div>
-                  <div class="ci-label">Phone</div>
-                  <div class="ci-handle">010-9648871</div>
+                <span class="ci-arrow">↗</span>
+              </a>
+              <a href="tel:+60109648871" class="contact-item">
+                <div class="ci-left">
+                  <div class="ci-icon">📞</div>
+                  <div>
+                    <div class="ci-label">Phone</div>
+                    <div class="ci-handle">010-9648871</div>
+                  </div>
                 </div>
-              </div>
-              <span class="ci-arrow">↗</span>
-            </a>
-            <a href="https://www.linkedin.com/in/nabilahshahidan" target="_blank" rel="noopener" class="contact-item">
-              <div class="ci-left">
-                <div class="ci-icon">💼</div>
-                <div>
-                  <div class="ci-label">LinkedIn</div>
-                  <div class="ci-handle">linkedin.com/in/nabilahshahidan</div>
+                <span class="ci-arrow">↗</span>
+              </a>
+              <a href="https://www.linkedin.com/in/nabilahshahidan" target="_blank" rel="noopener" class="contact-item">
+                <div class="ci-left">
+                  <div class="ci-icon">💼</div>
+                  <div>
+                    <div class="ci-label">LinkedIn</div>
+                    <div class="ci-handle">linkedin.com/in/nabilahshahidan</div>
+                  </div>
                 </div>
-              </div>
-              <span class="ci-arrow">↗</span>
-            </a>
-            <a href="https://github.com/bellshah" target="_blank" rel="noopener" class="contact-item">
-              <div class="ci-left">
-                <div class="ci-icon">🐙</div>
-                <div>
-                  <div class="ci-label">GitHub</div>
-                  <div class="ci-handle">github.com/bellshah</div>
+                <span class="ci-arrow">↗</span>
+              </a>
+              <a href="https://github.com/bellshah" target="_blank" rel="noopener" class="contact-item">
+                <div class="ci-left">
+                  <div class="ci-icon">🐙</div>
+                  <div>
+                    <div class="ci-label">GitHub</div>
+                    <div class="ci-handle">github.com/bellshah</div>
+                  </div>
                 </div>
-              </div>
-              <span class="ci-arrow">↗</span>
-            </a>
+                <span class="ci-arrow">↗</span>
+              </a>
+            </div>
           </div>
+
+          <!-- RIGHT: References -->
+          <div class="p6-right">
+            <p class="p6-refs-label">References</p>
+            <div class="ref-card">
+              <div class="ref-name">Ts. Azlina binti Zainuddin</div>
+              <div class="ref-role">Lecturer / Academic Advisor</div>
+              <div class="ref-inst">Faculty of Computing · Universiti Malaysia Pahang Al-Sultan Abdullah</div>
+              <div class="ref-contacts">
+                <a href="tel:+6094315548" class="ref-contact">📞 09-4315548</a>
+                <a href="mailto:azlinaz@umpsa.edu.my" class="ref-contact">✉️ azlinaz@umpsa.edu.my</a>
+              </div>
+            </div>
+            <div class="ref-card">
+              <div class="ref-name">Ts. Dr. Nabilah Filzah binti Mohd Radhuan</div>
+              <div class="ref-role">Senior Lecturer</div>
+              <div class="ref-inst">Faculty of Computing · Universiti Malaysia Pahang Al-Sultan Abdullah</div>
+              <div class="ref-contacts">
+                <a href="tel:+6094315581" class="ref-contact">📞 09-4315581</a>
+                <a href="mailto:nabilahfilzah@umpsa.edu.my" class="ref-contact">✉️ nabilahfilzah@umpsa.edu.my</a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
       <p class="p6-quote">"Build real things. Ship them. Learn from them." — Nabilah, 2026</p>
