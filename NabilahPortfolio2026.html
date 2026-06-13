@@ -215,8 +215,8 @@
       width:100%; height:100%;
     }
     .p1-left {
-      display:flex; flex-direction:column; justify-content:center;
-      padding:0 72px;
+      display:flex; flex-direction:column; justify-content:center; gap:12px;
+      padding:0 72px; overflow:hidden;
     }
     .p1-eyebrow {
       font-family:var(--mono); font-size:0.68rem;
@@ -255,10 +255,15 @@
       animation:fadeUp 0.8s ease 0.4s both;
     }
     .p1-bio strong { color:var(--warm); font-weight:500; }
-    .p1-certs {
-      display:flex; flex-direction:column; gap:7px;
+    .p1-objective {
+      display:flex; flex-direction:column; gap:6px;
       animation:fadeUp 0.8s ease 0.5s both;
     }
+    .p1-obj-label { display:none; }
+    .p1-obj-text {
+      font-size:0.9rem; font-weight:300; line-height:1.75; color:var(--warm3);
+    }
+    .p1-obj-text strong { color:var(--warm); font-weight:500; }
     .p1-cert-row {
       display:flex; align-items:center; gap:10px;
       font-size:0.8rem; color:var(--warm3);
@@ -283,7 +288,7 @@
       animation:fadeUp 0.8s ease 0.3s both;
       box-shadow:-8px 0 32px rgba(0,0,0,0.3);
     }
-    .p1-card { padding:14px 0; border-bottom:1px solid var(--border2); }
+    .p1-card { padding:14px 0; border-bottom:1px solid var(--border2); flex:1; display:flex; flex-direction:column; justify-content:center; }
     .p1-card:first-child { border-top:1px solid var(--border2); }
     .p1-card-lbl {
       font-family:var(--mono); font-size:0.7rem;
@@ -325,7 +330,7 @@
       width:100%; height:100%; position:relative; z-index:1;
     }
     .edu-grid {
-      display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows:1fr;
+      display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows:1fr auto;
       gap:18px; flex:1; min-height:0;
     }
     .edu-card {
@@ -333,9 +338,11 @@
       box-shadow:var(--elev1); border:1px solid var(--border2);
       padding:26px;
       position:relative; overflow-y:auto; overflow-x:hidden;
+      scrollbar-width:none;
       display:flex; flex-direction:column; min-height:0;
       transition:box-shadow 0.25s, transform 0.25s, border-color 0.25s;
     }
+    .edu-card::-webkit-scrollbar { display:none; }
     .edu-card:hover {
       box-shadow:var(--elev2); transform:translateY(-4px);
       border-color:rgba(94,234,212,0.2);
@@ -344,9 +351,16 @@
       content:''; position:absolute; top:0; left:0; right:0; height:3px;
       border-radius:var(--r-md) var(--r-md) 0 0;
     }
-    .edu-card.primary::before   { background:linear-gradient(90deg, var(--mint), var(--teal)); }
-    .edu-card.secondary::before { background:linear-gradient(90deg, var(--gold), rgba(251,191,36,0.3)); }
-    .edu-card.cert::before      { background:linear-gradient(90deg, rgba(94,234,212,0.4), transparent); }
+    .edu-card.primary::before    { background:linear-gradient(90deg, var(--mint), var(--teal)); }
+    .edu-card.secondary::before  { background:linear-gradient(90deg, var(--gold), rgba(251,191,36,0.3)); }
+    .edu-card.cert::before       { background:linear-gradient(90deg, rgba(94,234,212,0.4), transparent); }
+    .edu-card.projects::before   { background:linear-gradient(90deg, rgba(251,191,36,0.5), rgba(94,234,212,0.3)); }
+    .edu-card.projects { grid-column:1/-1; flex-direction:row; align-items:flex-start; gap:24px; }
+    .edu-card.projects .proj-label {
+      font-family:var(--mono); font-size:0.67rem; letter-spacing:0.1em;
+      color:var(--mint); white-space:nowrap; padding-top:2px;
+    }
+    .edu-card.projects .proj-points { display:flex; flex-direction:column; gap:8px; flex:1; }
     .edu-year {
       font-family:var(--mono); font-size:0.67rem;
       color:var(--warm3); letter-spacing:0.1em;
@@ -710,7 +724,7 @@
     }
     .p6-body {
       display:grid; grid-template-columns:1.4fr 1fr;
-      gap:56px; align-items:start; flex:1;
+      gap:56px; align-items:end; flex:1;
     }
     .p6-eyebrow {
       font-family:var(--mono); font-size:0.66rem;
@@ -922,9 +936,10 @@
         box-shadow:none;
       }
 
-      /* P2: 2-col on tablet, cert card spans full width */
+      /* P2: 2-col on tablet, cert + projects cards span full width */
       .edu-grid { grid-template-columns:1fr 1fr; grid-template-rows:none; flex:none; }
       .edu-card.cert { grid-column:1/-1; }
+      .edu-card.projects { grid-column:1/-1; flex-direction:column; gap:12px; }
 
       /* P3: stack sidebar above work-main; both flow naturally */
       .work-layout { grid-template-columns:1fr; grid-template-rows:none; gap:16px; }
@@ -1054,34 +1069,20 @@
           <h1 class="p1-name">Nabilah<br><em> Mohammad Shahidan</em></h1>
           <div class="p1-rule"></div>
           <p class="p1-role">Bachelor of Computer Science (Software Engineering) with Hons · UMPSA</p>
-          <p class="p1-bio">
+          <p class="p1-obj-text" style="font-size:1.0rem;">
             Final-year <strong>Software Engineering</strong> student at UMPSA, currently completing a
             <strong>6-month internship</strong> as an <strong>AI &amp; Digitalization Intern</strong> at
-            TNB Renewables Sdn. Bhd. Passionate about <strong>full-stack development</strong>, software
-            engineering, and digital solutions. Seeking <strong>Software Engineer Fresh Graduate</strong>
+            TNB Renewables Sdn. Bhd. Seeking <strong>Software Engineer Fresh Graduate</strong>
             or <strong>PROTÉGÉ</strong> opportunities upon internship completion.
           </p>
-          <div class="p1-certs">
-            <div class="p1-cert-row">
-              <span class="cert-ico ci-isc2">🔒</span>
-              <span class="cert-name">Certified in Cybersecurity — ISC2</span>
-            </div>
-            <div class="p1-cert-row">
-              <span class="cert-ico ci-anth">🤖</span>
-              <span class="cert-name">Anthropic Education: Claude with Anthropic API</span>
-            </div>
-            <div class="p1-cert-row">
-              <span class="cert-ico ci-aws">☁️</span>
-              <span class="cert-name">AWS Cloud Practitioner Essentials — Amazon Web Services</span>
-            </div>
-            <div class="p1-cert-row">
-              <span class="cert-ico ci-ms">🛡️</span>
-              <span class="cert-name">Microsoft Certified: Security, Compliance, and Identity Fundamentals</span>
-            </div>
-            <div class="p1-cert-row">
-              <span class="cert-ico ci-cisco">🌐</span>
-              <span class="cert-name">CCNAv7: Introduction to Networks — Cisco Networking Academy</span>
-            </div>
+          <div class="p1-objective">
+            <span class="p1-obj-label">Career Objective</span>
+            <p class="p1-obj-text" style="font-size:1.0rem;">
+              Motivated Computer Science (Software Engineering) graduate with hands-on experience in software development,
+              digital transformation, workflow improvement, and AI-enabled system support.
+              Seeking an entry-level opportunity to apply technical skills, contribute to innovative solutions,
+              and grow as a technology professional.
+            </p>
           </div>
         </div>
 
@@ -1108,7 +1109,7 @@
           </div>
           <div class="open-badge">
             <span class="ob-dot"></span>
-            Open to Work · Available Aug 2026
+            Open to Work · Available Sept 2026
           </div>
         </div>
       </div>
@@ -1209,6 +1210,32 @@
               </div>
             </div>
           </div>
+
+          <div class="edu-card projects">
+            <div class="proj-label">PROJECTS</div>
+            <div class="proj-points">
+              <div class="ab-point">
+                <span class="ab-dot"></span>
+                <span class="ab-text">Applied full <strong>Software Development Life Cycle (SDLC)</strong> including requirement analysis, system design, development, testing, and documentation.</span>
+              </div>
+              <div class="ab-point">
+                <span class="ab-dot"></span>
+                <span class="ab-text">Designed and developed an <strong>AI-Powered Decision-Making for Planning System</strong> as a Final Year Project, demonstrating the ability to implement complex software solutions from concept to deployment.</span>
+              </div>
+              <div class="ab-point">
+                <span class="ab-dot"></span>
+                <span class="ab-text">Developed <strong>database-driven systems</strong> focusing on workflow logic and data management.</span>
+              </div>
+              <div class="ab-point">
+                <span class="ab-dot"></span>
+                <span class="ab-text">Performed <strong>software testing, debugging, and quality assurance</strong> to ensure system reliability.</span>
+              </div>
+              <div class="ab-point">
+                <span class="ab-dot"></span>
+                <span class="ab-text">Prepared <strong>system documentation</strong> and process flow diagrams to support system understanding and maintenance.</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1266,6 +1293,15 @@
             </div>
 
             <div class="work-main">
+              <div class="work-section-lbl">Experience Overview</div>
+              <div class="exp-desc">
+                <div class="exp-desc-body">
+                  Supported digitalization initiatives by assisting in internal system development, dashboard interface updates,
+                  system testing, requirement discussions, and validation activities, while preparing documentation, user guides,
+                  and technical reports, and contributing to process improvement, workflow enhancement, and day-to-day technical
+                  and administrative support for AI and digitalisation projects.
+                </div>
+              </div>
               <div class="work-section-lbl">Client Projects</div>
               <div class="client-grid">
                 <div class="client-card">
@@ -1344,11 +1380,9 @@
               <div class="work-section-lbl">Experience Overview</div>
               <div class="exp-desc">
                 <div class="exp-desc-body">
-                  Gained hands-on experience in essential <strong>administrative and organizational functions</strong>,
-                  including precise <strong>data entry</strong> and comprehensive <strong>documentation and filing management</strong>.
-                  Successfully contributed to organizational knowledge by preparing <strong>formal reports</strong> and
-                  actively participated in various <strong>company engagement activities</strong>, enhancing overall
-                  understanding of corporate operations and fostering teamwork.
+                  Assisted in data entry, documentation, and records management for daily operations. Prepared reports and
+                  supported documentation and filing processes. Provided administrative support and participated in company
+                  activities, gaining exposure to corporate workflows and teamwork.
                 </div>
               </div>
               <div class="work-section-lbl">Responsibilities</div>
@@ -1398,18 +1432,18 @@
               <div class="sg-label">Programming Languages</div>
               <div class="sg-chips">
                 <span class="sg-chip highlight">Python</span>
-                <span class="sg-chip highlight">JavaScript</span>
                 <span class="sg-chip">C / C++</span>
                 <span class="sg-chip">PHP</span>
+                <span class="sg-chip highlight">JavaScript</span>
                 <span class="sg-chip highlight">SQL</span>
               </div>
             </div>
             <div class="skill-group">
               <div class="sg-label">Frontend</div>
               <div class="sg-chips">
+                <span class="sg-chip">React Native</span>
                 <span class="sg-chip highlight">HTML5</span>
                 <span class="sg-chip highlight">CSS3</span>
-                <span class="sg-chip">React Native</span>
                 <span class="sg-chip">Responsive Web Design</span>
                 <span class="sg-chip">API Integration</span>
               </div>
@@ -1428,6 +1462,7 @@
               <div class="sg-chips">
                 <span class="sg-chip highlight">MySQL</span>
                 <span class="sg-chip">Database Management</span>
+                <span class="sg-chip">PostgreSQL</span>
               </div>
             </div>
             <div class="skill-group">
@@ -1453,22 +1488,21 @@
             <div class="skill-group">
               <div class="sg-label">QA &amp; Technical Support</div>
               <div class="sg-chips">
-                <span class="sg-chip highlight">Quality Assurance (QA)</span>
-                <span class="sg-chip">Quality Control (QC)</span>
-                <span class="sg-chip">Software Testing &amp; Debugging</span>
-                <span class="sg-chip">Documentation &amp; Record Management</span>
+                <span class="sg-chip highlight">QA / QC</span>
+                <span class="sg-chip">Software Testing</span>
+                <span class="sg-chip">Debugging</span>
+                <span class="sg-chip">Documentation</span>
                 <span class="sg-chip highlight">Requirement Analysis</span>
-                <span class="sg-chip">Data Verification &amp; Validation</span>
                 <span class="sg-chip">Process Improvement</span>
-                <span class="sg-chip">Report Preparation</span>
               </div>
             </div>
             <div class="skill-group">
               <div class="sg-label">Tools</div>
               <div class="sg-chips">
                 <span class="sg-chip highlight">VS Code</span>
+                <span class="sg-chip">Cursor</span>
                 <span class="sg-chip">Android Studio</span>
-                <span class="sg-chip">Apache NetBeans IDE</span>
+                <span class="sg-chip">NetBeans</span>
                 <span class="sg-chip highlight">Postman</span>
                 <span class="sg-chip highlight">Figma</span>
                 <span class="sg-chip">Canva</span>
@@ -1485,22 +1519,26 @@
               </div>
             </div>
             <div class="academic-box">
-              <div class="sg-label">Academic Foundation</div>
+              <div class="sg-label">Soft Skills</div>
               <div class="ab-point">
                 <span class="ab-dot"></span>
-                <span class="ab-text"><strong>SE subjects:</strong> Software Project Management, Software Quality Assurance, Software Design &amp; Architecture, Software Requirements, Software Engineering Practice</span>
+                <span class="ab-text"><strong>Leadership</strong> &amp; Strategic Decision-Making</span>
               </div>
               <div class="ab-point">
                 <span class="ab-dot"></span>
-                <span class="ab-text"><strong>SDLC processes</strong> from requirements to deployment</span>
+                <span class="ab-text"><strong>Time Management</strong> &amp; Organization</span>
               </div>
               <div class="ab-point">
                 <span class="ab-dot"></span>
-                <span class="ab-text"><strong>Software testing, debugging,</strong> and QA documentation</span>
+                <span class="ab-text"><strong>Teamwork</strong> &amp; Collaboration</span>
               </div>
               <div class="ab-point">
                 <span class="ab-dot"></span>
-                <span class="ab-text"><strong>Analytical thinking</strong> through capstone projects</span>
+                <span class="ab-text"><strong>Adaptability</strong> &amp; Problem-Solving</span>
+              </div>
+              <div class="ab-point">
+                <span class="ab-dot"></span>
+                <span class="ab-text"><strong>Analytical Thinking</strong></span>
               </div>
             </div>
           </div>
@@ -1643,6 +1681,22 @@
                 <span class="event-date">May 2024</span>
               </div>
             </div>
+            <div class="event-card">
+              <span class="event-ico">🏕️</span>
+              <div class="event-info">
+                <span class="event-type organizer">Organizer</span>
+                <span class="event-name">UMPSA PEKA 5 — Program Combi Pahang</span>
+                <span class="event-date">December 2023</span>
+              </div>
+            </div>
+            <div class="event-card">
+              <span class="event-ico">🌿</span>
+              <div class="event-info">
+                <span class="event-type organizer">Organizer</span>
+                <span class="event-name">UMPSA PEKA 5 — Program Inisiatif Pucuk Hijau UMW</span>
+                <span class="event-date">November 2023</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1666,11 +1720,11 @@
           <div class="p6-left">
             <p class="p6-sub">
               I'm a <strong>Software Engineer</strong> open to full-time roles, collaborations, and
-              interesting projects starting <strong>August 2026</strong>.
+              interesting projects starting <strong>September 2026</strong>.
             </p>
             <div class="p6-open" style="margin-bottom:24px;">
               <span class="p6-open-dot"></span>
-              Open to Work · Available Aug 2026
+              Open to Work · Available Sept 2026
             </div>
             <div class="contact-list">
               <a href="mailto:nanabellashah03@gmail.com" class="contact-item">
@@ -1720,21 +1774,21 @@
           <div class="p6-right">
             <p class="p6-refs-label">References</p>
             <div class="ref-card">
-              <div class="ref-name">Ts. Azlina binti Zainuddin</div>
-              <div class="ref-role">Lecturer / Academic Advisor</div>
-              <div class="ref-inst">Faculty of Computing · Universiti Malaysia Pahang Al-Sultan Abdullah</div>
-              <div class="ref-contacts">
-                <a href="tel:+6094315548" class="ref-contact">📞 09-4315548</a>
-                <a href="mailto:azlinaz@umpsa.edu.my" class="ref-contact">✉️ azlinaz@umpsa.edu.my</a>
-              </div>
-            </div>
-            <div class="ref-card">
-              <div class="ref-name">Ts. Dr. Nabilah Filzah binti Mohd Radhuan</div>
+              <div class="ref-name">Ts. Dr. Nabilah Filzah Mohd Radhuan</div>
               <div class="ref-role">Senior Lecturer</div>
               <div class="ref-inst">Faculty of Computing · Universiti Malaysia Pahang Al-Sultan Abdullah</div>
               <div class="ref-contacts">
                 <a href="tel:+6094315581" class="ref-contact">📞 09-4315581</a>
                 <a href="mailto:nabilahfilzah@umpsa.edu.my" class="ref-contact">✉️ nabilahfilzah@umpsa.edu.my</a>
+              </div>
+            </div>
+            <div class="ref-card">
+              <div class="ref-name">Ahmad Amirul Hakim Bin Mohd Hamid</div>
+              <div class="ref-role">Executive IT Digitalization Corporate Services</div>
+              <div class="ref-inst">TNB Renewables Sdn Bhd · Bangsar, Wilayah Persekutuan Kuala Lumpur</div>
+              <div class="ref-contacts">
+                <a href="tel:+60111-56440394" class="ref-contact">📞 011-56440394</a>
+                <a href="mailto:ahmad.mohdhamid@tnb.com.my" class="ref-contact">✉️ ahmad.mohdhamid@tnb.com.my</a>
               </div>
             </div>
           </div>
