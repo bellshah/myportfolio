@@ -361,6 +361,11 @@
       color:var(--mint); white-space:nowrap; padding-top:2px;
     }
     .edu-card.projects .proj-points { display:flex; flex-direction:column; gap:8px; flex:1; }
+    .proj-group { display:flex; flex-direction:column; gap:8px; }
+    .proj-title {
+      font-size:0.82rem; font-weight:600; color:var(--warm);
+      letter-spacing:0.01em;
+    }
     .edu-year {
       font-family:var(--mono); font-size:0.67rem;
       color:var(--warm3); letter-spacing:0.1em;
@@ -1174,13 +1179,6 @@
             <div class="edu-year">PROFESSIONAL CERTIFICATIONS</div>
             <div class="cert-list">
               <div class="cert-item">
-                <span class="cert-item-ico">🔒</span>
-                <div class="cert-item-body">
-                  <span class="cert-item-name">Certified in Cybersecurity (CC)</span>
-                  <span class="cert-item-issuer">ISC2 · 2026</span>
-                </div>
-              </div>
-              <div class="cert-item">
                 <span class="cert-item-ico">☁️</span>
                 <div class="cert-item-body">
                   <span class="cert-item-name">AWS Cloud Practitioner Essentials</span>
@@ -1214,25 +1212,46 @@
           <div class="edu-card projects">
             <div class="proj-label">PROJECTS</div>
             <div class="proj-points">
-              <div class="ab-point">
-                <span class="ab-dot"></span>
-                <span class="ab-text">Applied full <strong>Software Development Life Cycle (SDLC)</strong> including requirement analysis, system design, development, testing, and documentation.</span>
+              <div class="proj-group">
+                <div class="proj-title">AI-Powered Holiday Planning System <em>(Final Year Project)</em></div>
+                <div class="ab-point">
+                  <span class="ab-dot"></span>
+                  <span class="ab-text">Developed an <strong>AI-based system</strong> integrating Google Gemini API, backend logic, and database management.</span>
+                </div>
+                <div class="ab-point">
+                  <span class="ab-dot"></span>
+                  <span class="ab-text">Implemented <strong>AI recommendations, chatbot features, user authentication</strong>, and database-driven functions.</span>
+                </div>
+                <div class="ab-point">
+                  <span class="ab-dot"></span>
+                  <span class="ab-text">Applied <strong>SDLC practices</strong> including requirement analysis, development, testing, and documentation.</span>
+                </div>
               </div>
-              <div class="ab-point">
-                <span class="ab-dot"></span>
-                <span class="ab-text">Designed and developed an <strong>AI-Powered Decision-Making for Planning System</strong> as a Final Year Project, demonstrating the ability to implement complex software solutions from concept to deployment.</span>
+              <div class="proj-group">
+                <div class="proj-title">Mobile Application Development Project</div>
+                <div class="ab-point">
+                  <span class="ab-dot"></span>
+                  <span class="ab-text">Developed <strong>cross-platform mobile applications</strong> using React Native and Laravel with REST API integration.</span>
+                </div>
+                <div class="ab-point">
+                  <span class="ab-dot"></span>
+                  <span class="ab-text">Implemented <strong>authentication, CRUD operations</strong>, and database management features.</span>
+                </div>
+                <div class="ab-point">
+                  <span class="ab-dot"></span>
+                  <span class="ab-text">Conducted <strong>testing and debugging</strong> to improve system performance.</span>
+                </div>
               </div>
-              <div class="ab-point">
-                <span class="ab-dot"></span>
-                <span class="ab-text">Developed <strong>database-driven systems</strong> focusing on workflow logic and data management.</span>
-              </div>
-              <div class="ab-point">
-                <span class="ab-dot"></span>
-                <span class="ab-text">Performed <strong>software testing, debugging, and quality assurance</strong> to ensure system reliability.</span>
-              </div>
-              <div class="ab-point">
-                <span class="ab-dot"></span>
-                <span class="ab-text">Prepared <strong>system documentation</strong> and process flow diagrams to support system understanding and maintenance.</span>
+              <div class="proj-group">
+                <div class="proj-title">Web-Based System Development</div>
+                <div class="ab-point">
+                  <span class="ab-dot"></span>
+                  <span class="ab-text">Developed <strong>web applications</strong> using Laravel, JavaScript, HTML, CSS, and MySQL.</span>
+                </div>
+                <div class="ab-point">
+                  <span class="ab-dot"></span>
+                  <span class="ab-text">Built <strong>workflow automation features</strong> and prepared technical documentation.</span>
+                </div>
               </div>
             </div>
           </div>
@@ -1296,10 +1315,12 @@
               <div class="work-section-lbl">Experience Overview</div>
               <div class="exp-desc">
                 <div class="exp-desc-body">
-                  Supported digitalization initiatives by assisting in internal system development, dashboard interface updates,
-                  system testing, requirement discussions, and validation activities, while preparing documentation, user guides,
-                  and technical reports, and contributing to process improvement, workflow enhancement, and day-to-day technical
-                  and administrative support for AI and digitalisation projects.
+                  Supported digital transformation projects through internal system development, dashboard enhancement, and
+                  workflow improvement, performing requirement analysis, system testing, and validation activities to ensure
+                  system functionality and reliability. Created technical documentation, user guides, and reports to support
+                  system operations and knowledge sharing, developed AI awareness materials to encourage effective AI tool
+                  adoption among employees, and collaborated with stakeholders to improve business processes and support
+                  digitalization initiatives.
                 </div>
               </div>
               <div class="work-section-lbl">Client Projects</div>
@@ -1320,24 +1341,24 @@
               <div class="work-section-lbl">Responsibilities</div>
               <div class="responsibilities-grid">
                 <div class="resp-card">
-                  <span class="resp-ico">🛠️</span>
-                  <span class="resp-title">Develop</span>
-                  <span class="resp-desc">Build full-stack features using Laravel, React Native, and MySQL across both client systems.</span>
+                  <span class="resp-ico">🚀</span>
+                  <span class="resp-title">Digital Transformation</span>
+                  <span class="resp-desc">Support internal system development, dashboard enhancement, and workflow improvement initiatives.</span>
                 </div>
                 <div class="resp-card">
                   <span class="resp-ico">🧪</span>
-                  <span class="resp-title">Test</span>
-                  <span class="resp-desc">Conduct software testing, debugging, and quality assurance to maintain system reliability.</span>
+                  <span class="resp-title">Testing &amp; Validation</span>
+                  <span class="resp-desc">Perform requirement analysis, system testing, and validation activities to ensure functionality and reliability.</span>
                 </div>
                 <div class="resp-card">
-                  <span class="resp-ico">💬</span>
-                  <span class="resp-title">Gather Feedback</span>
-                  <span class="resp-desc">Conduct requirement analysis and collect user feedback to guide iterative improvements.</span>
+                  <span class="resp-ico">📄</span>
+                  <span class="resp-title">Documentation</span>
+                  <span class="resp-desc">Create technical documentation, user guides, and reports to support system operations and knowledge sharing.</span>
                 </div>
                 <div class="resp-card">
-                  <span class="resp-ico">🔁</span>
-                  <span class="resp-title">Improve</span>
-                  <span class="resp-desc">Implement process improvements and maintain documentation based on user feedback cycles.</span>
+                  <span class="resp-ico">🤖</span>
+                  <span class="resp-title">AI Awareness &amp; Collaboration</span>
+                  <span class="resp-desc">Develop AI awareness materials and collaborate with stakeholders to improve business processes and digitalization.</span>
                 </div>
               </div>
             </div>
@@ -1380,32 +1401,33 @@
               <div class="work-section-lbl">Experience Overview</div>
               <div class="exp-desc">
                 <div class="exp-desc-body">
-                  Assisted in data entry, documentation, and records management for daily operations. Prepared reports and
-                  supported documentation and filing processes. Provided administrative support and participated in company
-                  activities, gaining exposure to corporate workflows and teamwork.
+                  Provided technical support for computers, printers, networks, and office IT infrastructure while managing
+                  IT asset records, inventory tracking, and equipment documentation. Diagnosed and resolved hardware, software,
+                  and connectivity issues through troubleshooting, and prepared technical documentation to assist with IT
+                  maintenance activities.
                 </div>
               </div>
               <div class="work-section-lbl">Responsibilities</div>
               <div class="responsibilities-grid">
                 <div class="resp-card">
-                  <span class="resp-ico">📋</span>
-                  <span class="resp-title">Data Entry</span>
-                  <span class="resp-desc">Performed precise data entry and maintained accuracy across organizational records and systems.</span>
+                  <span class="resp-ico">🖥️</span>
+                  <span class="resp-title">IT Support</span>
+                  <span class="resp-desc">Provided technical support for computers, printers, networks, and office IT infrastructure.</span>
                 </div>
                 <div class="resp-card">
                   <span class="resp-ico">🗂️</span>
-                  <span class="resp-title">Documentation</span>
-                  <span class="resp-desc">Managed comprehensive documentation and filing systems to support departmental operations.</span>
+                  <span class="resp-title">Asset Management</span>
+                  <span class="resp-desc">Managed IT asset records, inventory tracking, and equipment documentation.</span>
+                </div>
+                <div class="resp-card">
+                  <span class="resp-ico">🔧</span>
+                  <span class="resp-title">Troubleshooting</span>
+                  <span class="resp-desc">Diagnosed and resolved hardware, software, and connectivity issues through troubleshooting.</span>
                 </div>
                 <div class="resp-card">
                   <span class="resp-ico">📝</span>
-                  <span class="resp-title">Report Preparation</span>
-                  <span class="resp-desc">Prepared and submitted formal reports to contribute to organizational knowledge and decision-making.</span>
-                </div>
-                <div class="resp-card">
-                  <span class="resp-ico">🤝</span>
-                  <span class="resp-title">Engagement</span>
-                  <span class="resp-desc">Participated in company engagement activities, fostering teamwork and understanding corporate culture.</span>
+                  <span class="resp-title">Documentation</span>
+                  <span class="resp-desc">Prepared technical documentation and assisted with IT maintenance activities.</span>
                 </div>
               </div>
             </div>
@@ -1431,45 +1453,51 @@
             <div class="skill-group">
               <div class="sg-label">Programming Languages</div>
               <div class="sg-chips">
-                <span class="sg-chip highlight">Python</span>
-                <span class="sg-chip">C / C++</span>
-                <span class="sg-chip">PHP</span>
+                <span class="sg-chip highlight">PHP (Laravel)</span>
                 <span class="sg-chip highlight">JavaScript</span>
+                <span class="sg-chip">Python</span>
                 <span class="sg-chip highlight">SQL</span>
+                <span class="sg-chip">C / C++</span>
               </div>
             </div>
             <div class="skill-group">
               <div class="sg-label">Frontend</div>
               <div class="sg-chips">
+                <span class="sg-chip highlight">React.js</span>
                 <span class="sg-chip">React Native</span>
                 <span class="sg-chip highlight">HTML5</span>
                 <span class="sg-chip highlight">CSS3</span>
+                <span class="sg-chip">Tailwind CSS</span>
                 <span class="sg-chip">Responsive Web Design</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <div class="sg-label">Backend &amp; Database</div>
+              <div class="sg-chips">
+                <span class="sg-chip highlight">Laravel</span>
+                <span class="sg-chip highlight">REST API</span>
+                <span class="sg-chip">Authentication</span>
+                <span class="sg-chip">CRUD Operations</span>
+                <span class="sg-chip highlight">MySQL</span>
+                <span class="sg-chip">Database Management</span>
                 <span class="sg-chip">API Integration</span>
               </div>
             </div>
             <div class="skill-group">
-              <div class="sg-label">Backend</div>
+              <div class="sg-label">Software Engineering &amp; Testing</div>
               <div class="sg-chips">
-                <span class="sg-chip highlight">Laravel</span>
-                <span class="sg-chip">RESTful APIs</span>
-                <span class="sg-chip">Authentication &amp; Authorization</span>
-                <span class="sg-chip">CRUD Operations</span>
+                <span class="sg-chip highlight">SDLC</span>
+                <span class="sg-chip highlight">Requirement Analysis</span>
+                <span class="sg-chip">System Design</span>
+                <span class="sg-chip">Documentation</span>
+                <span class="sg-chip">Software Testing</span>
+                <span class="sg-chip">UAT</span>
+                <span class="sg-chip">Debugging</span>
               </div>
             </div>
             <div class="skill-group">
-              <div class="sg-label">Database</div>
+              <div class="sg-label">Deployment</div>
               <div class="sg-chips">
-                <span class="sg-chip highlight">MySQL</span>
-                <span class="sg-chip">Database Management</span>
-                <span class="sg-chip">PostgreSQL</span>
-              </div>
-            </div>
-            <div class="skill-group">
-              <div class="sg-label">Version Control &amp; Deployment</div>
-              <div class="sg-chips">
-                <span class="sg-chip highlight">Git</span>
-                <span class="sg-chip highlight">GitHub</span>
                 <span class="sg-chip">Netlify</span>
                 <span class="sg-chip">Render</span>
                 <span class="sg-chip">InfinityFree</span>
@@ -1486,32 +1514,24 @@
 
           <div class="skills-col">
             <div class="skill-group">
-              <div class="sg-label">QA &amp; Technical Support</div>
+              <div class="sg-label">Tools &amp; Platforms</div>
               <div class="sg-chips">
-                <span class="sg-chip highlight">QA / QC</span>
-                <span class="sg-chip">Software Testing</span>
-                <span class="sg-chip">Debugging</span>
-                <span class="sg-chip">Documentation</span>
-                <span class="sg-chip highlight">Requirement Analysis</span>
-                <span class="sg-chip">Process Improvement</span>
+                <span class="sg-chip highlight">Git</span>
+                <span class="sg-chip highlight">GitHub</span>
+                <span class="sg-chip highlight">VS Code</span>
+                <span class="sg-chip">Cursor</span>
+                <span class="sg-chip highlight">Claude Code</span>
+                <span class="sg-chip">Android Studio</span>
+                <span class="sg-chip">NetBeans</span>
+                <span class="sg-chip">Postman</span>
               </div>
             </div>
             <div class="skill-group">
-              <div class="sg-label">Tools</div>
+              <div class="sg-label">Design &amp; Office Tools</div>
               <div class="sg-chips">
-                <span class="sg-chip highlight">VS Code</span>
-                <span class="sg-chip">Cursor</span>
-                <span class="sg-chip">Android Studio</span>
-                <span class="sg-chip">NetBeans</span>
-                <span class="sg-chip highlight">Postman</span>
                 <span class="sg-chip highlight">Figma</span>
                 <span class="sg-chip">Canva</span>
                 <span class="sg-chip">Lucidchart</span>
-              </div>
-            </div>
-            <div class="skill-group">
-              <div class="sg-label">Office Tools</div>
-              <div class="sg-chips">
                 <span class="sg-chip">Microsoft Word</span>
                 <span class="sg-chip">Excel</span>
                 <span class="sg-chip">PowerPoint</span>
@@ -1526,7 +1546,7 @@
               </div>
               <div class="ab-point">
                 <span class="ab-dot"></span>
-                <span class="ab-text"><strong>Time Management</strong> &amp; Organization</span>
+                <span class="ab-text"><strong>Analytical Thinking</strong> &amp; Problem-Solving</span>
               </div>
               <div class="ab-point">
                 <span class="ab-dot"></span>
@@ -1534,11 +1554,11 @@
               </div>
               <div class="ab-point">
                 <span class="ab-dot"></span>
-                <span class="ab-text"><strong>Adaptability</strong> &amp; Problem-Solving</span>
+                <span class="ab-text"><strong>Time Management</strong> &amp; Organization</span>
               </div>
               <div class="ab-point">
                 <span class="ab-dot"></span>
-                <span class="ab-text"><strong>Analytical Thinking</strong></span>
+                <span class="ab-text"><strong>Adaptability</strong> &amp; Continuous Learning</span>
               </div>
             </div>
           </div>
